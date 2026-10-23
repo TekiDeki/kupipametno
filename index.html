@@ -207,7 +207,7 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
         <a class="btn pri" href="#finder">✨ Pronađi svoj gadget</a>
         <a class="btn gho" href="#katalog">Preskoči na katalog</a>
       </div>
-      <p class="mini"><b>Transparentnost:</b> linkovi ka prodavnicama su partner linkovi - ako kupiš preko njih, zaradimo malu proviziju, a tebi ne košta ni dinar više. <a href="#kako">Kako to radi</a>.</p>
+      <p class="mini"><b>Transparentnost:</b> neki linkovi ka prodavnicama su partner linkovi - ako kupiš preko njih, zaradimo malu proviziju, a tebi ne košta ni dinar više. <a href="#kako">Kako to radi</a>.</p>
     </div>
     <div class="hcard" aria-hidden="true">
       <div class="row1"><span class="bubble">🤔</span><div class="q">Pametni asistent za izbor<br><span style="font-weight:500;color:var(--mut);font-size:13.5px">Bez naloga, bez kolačića</span></div></div>
@@ -276,7 +276,7 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
       <div class="hcard2"><div class="he">🎯</div><h3>Praktična vrednost</h3><p>Ne listamo šta je popularno. Gledamo šta problema rešava u svakodnevici - i opisujemo iskreno, sa manama uključeno.</p></div>
       <div class="hcard2"><div class="he">🏪</div><h3>Provereni prodavci</h3><p>Linkujemo samo velike prodavnice sa garancijom, povraćajem i podrškom na srpskom ili engleskom: AliExpress, Gigatron, Amazon.</p></div>
       <div class="hcard2"><div class="he">💰</div><h3>Cene bez trikova</h3><p>Bez lažnih popusta i odbrojavanih sati. Naša cena je orijentaciona, a prava uvek stoji u prodavnici - gde je i akcija ako je ima.</p></div>
-      <div class="hcard2"><div class="he">🤝</div><h3>Otvoreni partneri</h3><p>Zaradimo malu proviziju kad kupiš preko partner linka. Tvoja cena ostaje ista - proviziju plaća prodavnica, ne ti.</p></div>
+      <div class="hcard2"><div class="he">🤝</div><h3>Otvoreni partneri</h3><p>Zaradimo malu proviziju kad kupiš preko partner linka. Tvoja cena ostaje ista - proviziju plaća prodavnica, ne ti. A kad je prava kupovina u prodavnici bez partner programa, linkujemo je isto - bez provizije.</p></div>
     </div>
   </div>
 </section>
@@ -313,7 +313,7 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
       </div>
     </div>
     <div class="fbot">
-      <span>© 2026 Kupi Pametno. Sve kupovine se obavljaju u prodavnicama partnerima.</span>
+      <span>© 2026 Kupi Pametno. Sve kupovine se obavljaju u prodavnicama.</span>
       <span>Napravljeno bez kolačića i prijava. 🌱</span>
     </div>
   </div>
@@ -514,6 +514,7 @@ const FQ = [
 /* ===== helpers ===== */
 const $ = s => document.querySelector(s);
 const fmtDin = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " din";
+function isAff(p){ return !!p.a || !!AFF[p.src === "web" ? "web" : p.src]; }
 function buyUrl(p){
   if(p.a) return p.a;
   const a = AFF[p.src === "web" ? "web" : p.src];
@@ -536,7 +537,7 @@ function card(p){
         <div class="price">${price}<small>${p.soft ? "pretplata" : "orijentaciono"}</small></div>
         <a class="buy" href="${buyUrl(p)}" target="_blank" rel="nofollow noopener">Pogledaj ↗</a>
       </div>
-      <span class="psrc">${SRC[p.src]} · partner link</span>
+      <span class="psrc">${SRC[p.src]}${isAff(p) ? " · partner link" : ""}</span>
     </div>
   </article>`;
 }
