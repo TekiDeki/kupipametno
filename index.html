@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kupi Pametno - Koji gadget ti treba?</title>
+<meta name="description" content="Pametan vodič za kupovinu gadgeta u Srbiji. Šest pitanja i dobijaš tri preporuke sa razlozima, cenama i linkom do proverene prodavnice. Bez naloga, bez praćenja.">
+<meta name="theme-color" content="#0b8457">
+<meta property="og:title" content="Kupi Pametno - Koji gadget ti treba?">
+<meta property="og:description" content="Nađi pravi gadget za 60 sekundi. Iskrene preporuke, orijentacione cene, linkovi do proverenih prodavnica.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b8457'/%3E%3Cpath d='M18 24h28l-3 24a4 4 0 0 1-4 3H25a4 4 0 0 1-4-3zm8 0v-2a6 6 0 0 1 12 0v2' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27' cy='33' r='2.5' fill='%23fff'/%3E%3Ccircle cx='37' cy='33' r='2.5' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f6f8f5; --bg2:#eef2ec; --surf:#ffffff; --surf2:#f1f5f0; --ink:#182620; --mut:#5b6b62;
+  --ac:#0b8457; --ac2:#0aa06a; --acsoft:#e2f3ea; --acink:#075c3c;
+  --warn:#b45309; --warnsoft:#fdf1e3;
+  --bd:#dde5dd; --sh:0 1px 2px rgba(24,38,32,.05),0 8px 24px rgba(24,38,32,.07);
+  --sh2:0 2px 4px rgba(24,38,32,.06),0 14px 40px rgba(24,38,32,.12);
+  --r:18px; --rad:999px;
+}
+[data-theme="dark"]{
+  --bg:#0d1512; --bg2:#101a16; --surf:#15201b; --surf2:#1b2822; --ink:#e9f1ec; --mut:#93a69b;
+  --ac:#31c98b; --ac2:#4ade9e; --acsoft:#12352a; --acink:#7de8bd;
+  --warn:#e8a55a; --warnsoft:#33251688;
+  --bd:#243329; --sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  --sh2:0 2px 6px rgba(0,0,0,.35),0 18px 50px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+a{color:var(--ac);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{line-height:1.22;letter-spacing:-.02em}
+img,svg{vertical-align:middle}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
+.hbar{display:flex;align-items:center;gap:18px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.02em}
+.logo:hover{text-decoration:none}
+.logo .lmark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;color:#fff;box-shadow:var(--sh)}
+.logo .lmark svg{width:20px;height:20px}
+nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+nav a{color:var(--mut);font-weight:600;font-size:14.5px;padding:8px 12px;border-radius:10px}
+nav a:hover{color:var(--ink);background:var(--surf2);text-decoration:none}
+.tbtn{width:38px;height:38px;border-radius:11px;border:1px solid var(--bd);background:var(--surf);color:var(--ink);cursor:pointer;display:grid;place-items:center;font-size:17px;transition:transform .15s}
+.tbtn:hover{transform:scale(1.07)}
+@media(max-width:680px){nav a{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:72px 0 56px;background:
+  radial-gradient(700px 340px at 12% -10%,var(--acsoft),transparent 60%),
+  radial-gradient(600px 300px at 95% 0%,color-mix(in srgb,var(--acsoft) 55%,transparent),transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:var(--acsoft);color:var(--acink);font-weight:700;font-size:13px;padding:6px 14px;border-radius:var(--rad);margin-bottom:18px}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--ac);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-size:clamp(34px,5vw,56px);font-weight:800}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent;padding:.04em .02em;margin:-.04em -.02em}
+.hero p.lead{margin:18px 0 26px;font-size:18.5px;color:var(--mut);max-width:560px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:16px;padding:13px 24px;border-radius:13px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn.pri{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;box-shadow:0 8px 22px color-mix(in srgb,var(--ac) 35%,transparent)}
+.btn.pri:hover{transform:translateY(-2px);text-decoration:none}
+.btn.gho{background:var(--surf);color:var(--ink);border:1px solid var(--bd);box-shadow:var(--sh)}
+.btn.gho:hover{text-decoration:none;background:var(--surf2)}
+.hero .mini{margin-top:26px;font-size:13.5px;color:var(--mut);max-width:560px}
+.hero .mini b{color:var(--ink)}
+/* hero collage */
+.hcard{background:var(--surf);border:1px solid var(--bd);border-radius:22px;box-shadow:var(--sh2);padding:22px;position:relative}
+.hcard .row1{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+.hcard .bubble{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:26px;background:var(--acsoft)}
+.hcard .q{font-weight:700}
+.hcard .steps{display:flex;flex-direction:column;gap:10px}
+.hcard .st{display:flex;align-items:center;gap:12px;background:var(--surf2);border:1px solid var(--bd);border-radius:14px;padding:10px 14px;font-size:14.5px;font-weight:600}
+.hcard .st .n{width:24px;height:24px;border-radius:8px;background:var(--acsoft);color:var(--acink);display:grid;place-items:center;font-size:12.5px;font-weight:800}
+.hcard .res{margin-top:14px;background:linear-gradient(135deg,var(--ac),var(--ac2));border-radius:14px;padding:13px 16px;color:#fff;display:flex;align-items:center;gap:12px;font-weight:700;font-size:14.5px}
+.hcard .res .pct{background:rgba(255,255,255,.22);padding:3px 10px;border-radius:var(--rad);font-size:12.5px}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:34px}.hero{padding:52px 0 44px}}
+</style>
+<style>
+/* ---------- sections ---------- */
+section{padding:56px 0}
+.shead{max-width:640px;margin-bottom:30px}
+.shead h2{font-size:clamp(26px,3.4vw,36px);font-weight:800}
+.shead p{margin-top:10px;color:var(--mut);font-size:16.5px}
+.strip{background:var(--bg2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+
+/* ---------- finder ---------- */
+.finder{background:var(--surf);border:1px solid var(--bd);border-radius:26px;box-shadow:var(--sh2);padding:34px;max-width:780px;margin:0 auto;position:relative;overflow:hidden}
+.finder .fprog{position:absolute;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--ac),var(--ac2));width:0;transition:width .35s}
+.finder .ftag{font-size:12.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--acink);background:var(--acsoft);padding:5px 12px;border-radius:var(--rad);display:inline-block;margin-bottom:14px}
+.finder h3.fq{font-size:clamp(20px,2.6vw,26px);font-weight:800;margin-bottom:6px}
+.finder .fhint{color:var(--mut);font-size:14.5px;margin-bottom:20px}
+.opts{display:flex;flex-wrap:wrap;gap:11px}
+.opt{border:1.5px solid var(--bd);background:var(--surf2);color:var(--ink);font:600 15px/1.4 inherit;padding:12px 18px;border-radius:13px;cursor:pointer;transition:all .15s}
+.opt:hover{border-color:var(--ac);background:var(--acsoft);transform:translateY(-1px)}
+.opt small{display:block;font-weight:500;color:var(--mut);font-size:12.5px}
+.fnav{margin-top:22px;display:flex;gap:10px;align-items:center}
+.fback{border:none;background:none;color:var(--mut);font-weight:600;font-size:14px;cursor:pointer;padding:8px 10px;border-radius:9px}
+.fback:hover{background:var(--surf2);color:var(--ink)}
+.fdots{display:flex;gap:6px;margin-left:auto}
+.fdots i{width:7px;height:7px;border-radius:50%;background:var(--bd);transition:all .2s}
+.fdots i.on{background:var(--ac);width:20px;border-radius:var(--rad)}
+/* results */
+.fres{display:none}
+.fres .done{font-size:15px;color:var(--mut);margin-bottom:18px}
+.fres .done b{color:var(--ink)}
+.rcards{display:grid;gap:14px}
+.rcard{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;background:var(--surf2);border:1px solid var(--bd);border-radius:18px;padding:16px 18px;animation:up .4s both}
+.rcard:nth-child(2){animation-delay:.08s}.rcard:nth-child(3){animation-delay:.16s}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.rcard .ic{width:64px;height:64px;border-radius:16px;background:var(--acsoft);display:grid;place-items:center;font-size:31px}
+.rcard h4{font-size:17px;font-weight:800;margin-bottom:3px}
+.rcard .rr{font-size:13.5px;color:var(--mut);margin-bottom:8px}
+.rcard .rr b{color:var(--acink)}
+.match{font-weight:800;color:var(--acink);font-size:13px;background:var(--acsoft);padding:5px 11px;border-radius:var(--rad);white-space:nowrap}
+.restart{margin-top:20px;text-align:center}
+.restart button{border:none;background:none;color:var(--ac);font-weight:700;cursor:pointer;font-size:14.5px;padding:8px}
+@media(max-width:640px){.rcard{grid-template-columns:52px 1fr;row-gap:8px}.rcard .match{grid-column:2}}
+
+/* ---------- catalog ---------- */
+.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--bd);background:var(--surf);color:var(--mut);font:700 14px inherit;padding:8px 16px;border-radius:var(--rad);cursor:pointer;transition:all .15s}
+.chip:hover{color:var(--ink)}
+.chip.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.search{flex:1;min-width:200px;max-width:330px;margin-left:auto;position:relative}
+.search input{width:100%;padding:11px 14px 11px 40px;border-radius:13px;border:1.5px solid var(--bd);background:var(--surf);color:var(--ink);font:500 15px inherit;outline:none;transition:border .15s}
+.search input:focus{border-color:var(--ac)}
+.search .si{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--mut);font-size:15px;pointer-events:none}
+.search select{margin-left:10px}
+select.sel{padding:11px 13px;border-radius:13px;border:1.5px solid var(--bd);background:var(--surf);color:var(--ink);font:600 14px inherit;cursor:pointer;outline:none}
+@media(max-width:760px){.tools{flex-direction:column;align-items:stretch}.search{max-width:none}.chips{justify-content:flex-start}}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:18px}
+.pcard{background:var(--surf);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.pcard:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.ptile{height:120px;display:grid;place-items:center;font-size:52px;position:relative;background:linear-gradient(135deg,var(--acsoft),color-mix(in srgb,var(--acsoft) 40%,var(--surf2)))}
+.ptile .cat{position:absolute;top:10px;left:10px;background:color-mix(in srgb,var(--surf) 78%,transparent);backdrop-filter:blur(6px);color:var(--acink);font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:var(--rad)}
+.pbody{padding:16px 17px 17px;display:flex;flex-direction:column;gap:9px;flex:1}
+.pbody h3{font-size:16.5px;font-weight:800}
+.pwhy{font-size:13.8px;color:var(--mut);line-height:1.5}
+.plist{list-style:none;display:flex;flex-direction:column;gap:4px;font-size:13.2px;color:var(--mut)}
+.plist li{padding-left:18px;position:relative}
+.plist li::before{content:"✓";position:absolute;left:0;color:var(--ac);font-weight:800}
+.plist.con li::before{content:"–";color:var(--warn)}
+.prow{margin-top:auto;display:flex;align-items:center;gap:10px;padding-top:10px;border-top:1px dashed var(--bd)}
+.price{font-size:15px;font-weight:800;white-space:nowrap}
+.price small{display:block;font-size:10.5px;font-weight:600;color:var(--mut);letter-spacing:.02em}
+.buy{margin-left:auto;display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;font-weight:700;font-size:13.5px;padding:10px 15px;border-radius:11px;transition:transform .15s;box-shadow:0 5px 14px color-mix(in srgb,var(--ac) 30%,transparent)}
+.buy:hover{transform:translateY(-1px);text-decoration:none}
+.psrc{font-size:11px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
+.pnote{font-size:11.5px;color:var(--mut);background:var(--surf2);border-radius:9px;padding:5px 9px}
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--mut)}
+.empty .e{font-size:44px;margin-bottom:10px}
+
+/* ---------- how / faq / footer ---------- */
+.hgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.hcard2{background:var(--surf);border:1px solid var(--bd);border-radius:var(--r);padding:22px;box-shadow:var(--sh)}
+.hcard2 .he{width:46px;height:46px;border-radius:13px;background:var(--acsoft);display:grid;place-items:center;font-size:23px;margin-bottom:13px}
+.hcard2 h3{font-size:16px;font-weight:800;margin-bottom:7px}
+.hcard2 p{font-size:14px;color:var(--mut);line-height:1.55}
+.faq{max-width:760px}
+details{background:var(--surf);border:1px solid var(--bd);border-radius:15px;padding:0 20px;margin-bottom:11px;box-shadow:var(--sh)}
+details summary{cursor:pointer;font-weight:700;font-size:15.5px;padding:16px 0;list-style:none;display:flex;align-items:center;gap:10px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";margin-left:auto;font-size:21px;color:var(--ac);font-weight:600;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mut);font-size:14.5px;padding:0 0 17px;max-width:640px}
+footer{background:var(--bg2);border-top:1px solid var(--bd);padding:44px 0 30px;margin-top:26px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;margin-bottom:28px}
+footer h4{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin-bottom:12px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14.5px}
+footer ul a{color:var(--ink)}
+footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
+.fbot{border-top:1px solid var(--bd);padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:var(--mut)}
+@media(max-width:820px){.fgrid{grid-template-columns:1fr}}
+.totop{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:14px;border:1px solid var(--bd);background:var(--surf);color:var(--ink);font-size:18px;cursor:pointer;box-shadow:var(--sh2);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
+.totop.on{opacity:1;pointer-events:auto}
+</style>
+<script>try{var _t=localStorage.getItem("kp-theme");if(_t==="dark"||(!_t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.dataset.theme="dark"}catch(e){}</script>
+</head>
+<body>
+<header>
+  <div class="wrap hbar">
+    <a class="logo" href="#top"><span class="lmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1.2 11a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span>Kupi Pametno</a>
+    <nav>
+      <a href="#finder">Asistent</a>
+      <a href="#katalog">Katalog</a>
+      <a href="#kako">Kako biramo</a>
+      <a href="#faq">Pitanja</a>
+      <button class="tbtn" id="themeBtn" aria-label="Tema" title="Promeni temu">🌓</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker"><span class="dot"></span>Vodič za pametnu kupovinu</span>
+      <h1>Koji gadget <em>ti</em> treba?</h1>
+      <p class="lead">Šest pitanja, šezdeset sekundi - i dobijaš tri preporuke sa poštenim razlozima, orijentacionim cenama i linkom do proverene prodavnice. Mi ne prodajemo ništa: vodimo te do prave kupovine.</p>
+      <div class="cta">
+        <a class="btn pri" href="#finder">✨ Pronađi svoj gadget</a>
+        <a class="btn gho" href="#katalog">Preskoči na katalog</a>
+      </div>
+      <p class="mini"><b>Transparentnost:</b> linkovi ka prodavnicama su partner linkovi - ako kupiš preko njih, zaradimo malu proviziju, a tebi ne košta ni dinar više. <a href="#kako">Kako to radi</a>.</p>
+    </div>
+    <div class="hcard" aria-hidden="true">
+      <div class="row1"><span class="bubble">🤔</span><div class="q">Pametni asistent za izbor<br><span style="font-weight:500;color:var(--mut);font-size:13.5px">Bez naloga, bez kolačića</span></div></div>
+      <div class="steps">
+        <div class="st"><span class="n">1</span>Za koga i gde kupuješ?</div>
+        <div class="st"><span class="n">2</span>Koliko izdvajaš, šta ti je važno?</div>
+        <div class="st"><span class="n">3</span>Tri preporuke sa razlozima</div>
+      </div>
+      <div class="res">🎯 Tvoj najbolji poklonac <span class="pct">96%</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="finder">
+  <div class="wrap">
+    <div class="shead" style="text-align:center;margin-left:auto;margin-right:auto">
+      <h2>Pametni asistent za izbor</h2>
+      <p>Odgovori iskreno - algoritam upari tvoje odgovore sa našim izborom i objasni zašto.</p>
+    </div>
+    <div class="finder" id="fbox">
+      <div class="fprog" id="fprog"></div>
+      <div class="fsteps" id="fsteps">
+        <span class="ftag">Asistent</span>
+        <h3 class="fq" id="fq"></h3>
+        <p class="fhint" id="fhint"></p>
+        <div class="opts" id="fopts"></div>
+        <div class="fnav">
+          <button class="fback" id="fback" style="display:none">← Nazad</button>
+          <div class="fdots" id="fdots"></div>
+        </div>
+      </div>
+      <div class="fres" id="fres">
+        <span class="ftag">Gotovo 🎉</span>
+        <h3 class="fq">Tvoje tri preporuke</h3>
+        <p class="done" id="fdone"></p>
+        <div class="rcards" id="rcards"></div>
+        <div class="restart"><button id="frestart">↻ Podesi odgovore i ponovi</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="katalog" class="strip">
+  <div class="wrap">
+    <div class="shead">
+      <h2>Naš izbor gadgeta</h2>
+      <p>Ručno odabrano, redovno proveravano. Cene su orijentacione - tačnu i aktuelnu cenu uvek proveri u prodavnici.</p>
+    </div>
+    <div class="tools">
+      <div class="chips" id="chips"></div>
+      <div class="search"><span class="si">🔎</span><input id="q" type="search" placeholder="Traži (npr. slušalice, usisivač)..." aria-label="Pretraga"></div>
+      <select class="sel" id="sort" aria-label="Sortiranje">
+        <option value="rec">Naš izbor</option>
+        <option value="asc">Prvo najjeftinije</option>
+        <option value="desc">Prvo najskuplje</option>
+      </select>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="kako">
+  <div class="wrap">
+    <div class="shead"><h2>Kako biramo</h2><p>Četiri pravila po kojima radi svaka preporuka na ovom sajtu.</p></div>
+    <div class="hgrid">
+      <div class="hcard2"><div class="he">🎯</div><h3>Praktična vrednost</h3><p>Ne listamo šta je popularno. Gledamo šta problema rešava u svakodnevici - i opisujemo iskreno, sa manama uključeno.</p></div>
+      <div class="hcard2"><div class="he">🏪</div><h3>Provereni prodavci</h3><p>Linkujemo samo velike prodavnice sa garancijom, povraćajem i podrškom na srpskom ili engleskom: AliExpress, Gigatron, Amazon.</p></div>
+      <div class="hcard2"><div class="he">💰</div><h3>Cene bez trikova</h3><p>Bez lažnih popusta i odbrojavanih sati. Naša cena je orijentaciona, a prava uvek stoji u prodavnici - gde je i akcija ako je ima.</p></div>
+      <div class="hcard2"><div class="he">🤝</div><h3>Otvoreni partneri</h3><p>Zaradimo malu proviziju kad kupiš preko partner linka. Tvoja cena ostaje ista - proviziju plaća prodavnica, ne ti.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="strip">
+  <div class="wrap">
+    <div class="shead"><h2>Pitanja koja svi postavljaju</h2></div>
+    <div class="faq">
+      <details><summary>Da li vi prodajete proizvode?</summary><p>Ne. Kupi Pametno je vodič za kupovinu: uporedimo, objasnimo i pošaljemo te direktno u prodavnicu. Porudžbinu, plaćanje, garanciju i povraćaj vodi prodavnica u kojoj kupuješ.</p></details>
+      <details><summary>Da li mi kupovina preko vašeg linka košta više?</summary><p>Ne, ni dinar. Prodavnica nama isplaćuje proviziju za dovedenog kupca iz svog marketing budžeta. Tvoja cena je identična onoj koju bi dobio da si ušao direktno.</p></details>
+      <details><summary>Kako birate proizvode koje preporučujete?</summary><p>Po praktičnoj vrednosti: koliko problema rešava u odnosu na cenu, koliko je pouzdan proizvođač i kakve su recenzije na više izvora. Svaku preporuku upisujemo sa prednostima i manama - bez reklamnog jezika.</p></details>
+      <details><summary>Šta ako se cena promeni?</summary><p>Cene na sajtu su orijentacione i ažuriramo ih periodično. Pre kupovine uvek proveri aktuelnu cenu u prodavnici - tamo je i svaka akcija vidljiva.</p></details>
+      <details><summary>Da li pratite moje podatke?</summary><p>Ne. Sajt radi bez naloga, bez prijave i bez kolačića za praćenje. Tema se čuva lokalno u tvom pregledaču - to je sve. Jedini kolačić koji se postavlja je onaj prodavnice kad klikneš na partner link.</p></details>
+      <details><summary>Zašto onda ovo radite?</summary><p>Provizije pokrivaju rad na sajtu: istraživanje, pisanje i održavanje. Ako ti pomognemo da kupiš pravu stvar - i ti si zadovoljan i prodavnica plati koji dinar. Svi dobijaju.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="#top"><span class="lmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1.2 11a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span>Kupi Pametno</a>
+        <p class="fdesc">Nezavisni vodič za gadgete u Srbiji. Ne prodajemo ništa - upoređujemo, objašnjavamo i vodimo do proverenih prodavnica.</p>
+      </div>
+      <div>
+        <h4>Sajt</h4>
+        <ul><li><a href="#finder">Asistent za izbor</a></li><li><a href="#katalog">Katalog</a></li><li><a href="#kako">Kako biramo</a></li><li><a href="#faq">Pitanja</a></li></ul>
+      </div>
+      <div>
+        <h4>Transparencija</h4>
+        <ul><li><a href="#kako">Partner program</a></li><li><a href="#faq">Privatnost</a></li><li>Orijentacione cene, bez lažnih popusta</li></ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Kupi Pametno. Sve kupovine se obavljaju u prodavnicama partnerima.</span>
+      <span>Napravljeno bez tragača i prijava. 🌱</span>
+    </div>
+  </div>
+</footer>
+<button class="totop" id="totop" aria-label="Na vrh">↑</button>
+<script>
+"use strict";
+/* ===== partner parametri (prazno = cisti linkovi; dopuni posle odobrenja programa) ===== */
+const AFF = {
+  aliexpress: "",   // npr. "?aff_fcid=...&aff_pid=..."
+  gigatron: "",
+  amazon: "",
+  web: ""
+};
+const SRC = { aliexpress:"AliExpress", gigatron:"Gigatron", amazon:"Amazon", web:"Veb sajt" };
+const CATS = { kuca:"Kuća", kanc:"Kancelarija", put:"Putovanja", bezb:"Bezbednost" };
+
+/* ===== katalog: n=naziv, e=emoji, c=kategorija, src=izvor, pr=cena (din) =====
+   u=koriscenje, p=prioriteti, t=tehnika 1-3, b=budzet 1-4, f=forma 1-2 ===== */
+const P = [
+ {id:"purifier", e:"🌿", n:"Pročišćivač vazduha Xiaomi 4 Lite", c:"kuca", src:"aliexpress", pr:17000,
+  why:"Tiho čisti vazduh u sobama srednje veličine - najveća razlika za alergične i gradske stanove.",
+  pros:["Preporučuje se za alergije i prašinu","Radi gotovo nečujno noću","Upravlja se iz aplikacije"],
+  cons:["Filter menjati na 6-12 meseci","Nije za velike prostorije"],
+  u:["kuca"], p:["zdravlje"], t:2, b:3, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-xiaomi-air-purifier-4-lite.html"},
+ {id:"robovac", e:"🤖", n:"Mijia robot usisivač (serija G)", c:"kuca", src:"aliexpress", pr:23000,
+  why:"Usisava umesto tebe po rasporedu - svaki dan čista pod bez podizanja prsta.",
+  pros:["Radi po rasporedu i bez tebe","Vraća se sam na stanicu za punjenje","Usisava i prašinu i dlake"],
+  cons:["Ćoškovi i ivice ostaju njemu nedostupni","Za tepihe traži jaču klasu"],
+  u:["kuca"], p:["vreme"], t:2, b:4, f:2,
+  url:"https://www.aliexpress.com/w/wholesale-mijia-robot-vacuum-g10.html"},
+ {id:"smartset", e:"💡", n:"Xiaomi pametna sijalica + utičnica set", c:"kuca", src:"aliexpress", pr:3500,
+  why:"Najjeftiniji ulaz u pametni dom: svetlo po raspoloženju i utičnica koja sluša telefon.",
+  pros:["Radi sa Mi Home aplikacijom","Nije potreban dodatni hub","Podesiva boja i jačina"],
+  cons:["Traži 2,4 GHz WiFi","Sijalica greje lampu zatvorenog tipa"],
+  u:["kuca"], p:["komfort","zabava"], t:2, b:2, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-xiaomi-smart-bulb-smart-plug.html"},
+ {id:"airfryer", e:"🍟", n:"Air fryer (friteza bez ulja) 4L", c:"kuca", src:"aliexpress", pr:11000,
+  why:"Hrskavo iz pećnice bez pola litre ulja - brža i zdravija varijanta svakodnevne kuhinje.",
+  pros:["Do 80% manje ulja","Brža od rerna za male porcije","Lako se čisti"],
+  cons:["Zauzima deo pulta","Za porodicu traži veću zapreminu"],
+  u:["kuca"], p:["zdravlje","vreme"], t:1, b:3, f:2,
+  url:"https://www.aliexpress.com/w/wholesale-xiaomi-mi-air-fryer.html"},
+ {id:"humid", e:"💨", n:"Ultrazvučni ovlaživač vazduha 4L", c:"kuca", src:"aliexpress", pr:4000,
+  why:"Rešava suv vazduh tokom grejne sezone - grlo i koža osete razliku za par dana.",
+  pros:["Tihi rad pogodan za spavanje","Veliki rezervoar radi celu noć","Podesiva izmaglica"],
+  cons:["Traži demineralizovanu vodu","Potreban redovan čišćenje"],
+  u:["kuca"], p:["zdravlje","komfort"], t:1, b:2, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-xiaomi-humidifier-4l.html"},
+ {id:"ups", e:"🔌", n:"Mini UPS za ruter (12V)", c:"kuca", src:"gigatron", pr:6500,
+  why:"Kad nestane struje, internet ostaje - ruter i optički terminal rade još 3-5 sati.",
+  pros:["Net i WiFi tokom nestanka","Štiti ruter od skokova napona","Bez održavanja"],
+  cons:["Drži samo srednje routere","Punjenje traći utičnicu"],
+  u:["kuca"], p:["bezbednost","komfort"], t:2, b:2, f:1,
+  url:"https://gigatron.rs/pretraga?q=ups+12v+ruter"},
+ {id:"mxkeys", e:"⌨️", n:"Logitech MX Keys Mini", c:"kanc", src:"gigatron", pr:13500,
+  why:"Tastatura na kojoj se kuca ceo dan bez umora - tiha, povezana na tri uređaja odjednom.",
+  pros:["Kuca semekšano i tiho","Prebacivanje na 3 uređaja","Pozadinsko osvetljenje"],
+  cons:["Nema numerički deo","Skuplja od običnih tastatura"],
+  u:["kanc"], p:["komfort"], t:2, b:3, f:1,
+  url:"https://gigatron.rs/pretraga?q=logitech+mx+keys+mini"},
+ {id:"hub", e:"🧩", n:"Anker 341 USB-C hub (7-u-1)", c:"kanc", src:"aliexpress", pr:4800,
+  why:"Jedan uređaj pretvara jedan USB-C port u komplet radne stanice: monitor, USB, kartice.",
+  pros:["HDMI za spoljni monitor","Čita SD mikroSD kartice","Napaja laptop istovremeno"],
+  cons:["4K samo na 30Hz","Kratki kabl"],
+  u:["kanc","put"], p:["komfort","vreme"], t:2, b:2, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-anker-341-usb-c-hub.html"},
+ {id:"stand", e:"💻", n:"Aluminijumski nosač za laptop", c:"kanc", src:"aliexpress", pr:2800,
+  why:"Diže ekran u visinu očiju - najjeftinija popravka za vrat i leđa pri celodnevnom radu.",
+  pros:["Podesiv ugao","Sklapa se ravno za torbu","Hladi laptop protokom vazduha"],
+  cons:["Traži zasebnu tastaturu za pun efekat"],
+  u:["kanc"], p:["zdravlje"], t:1, b:1, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-aluminum-laptop-stand.html"},
+ {id:"lamp", e:"🔦", n:"LED lampa za rad, podesiva", c:"kanc", src:"aliexpress", pr:3200,
+  why:"Ravnomerno svetlo bez senki na ekranu - oči manje zamore na dužim sesijama.",
+  pros:["Podesiva temperatura i jačina","Nema treperenja","Mala površina na stolu"],
+  cons:["Najbolji ugao traži nameštanje"],
+  u:["kanc","kuca"], p:["zdravlje","komfort"], t:1, b:2, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-led-desk-lamp-eye-caring.html"},
+ {id:"vmouse", e:"🖱️", n:"Vertikalni ergonomski miš", c:"kanc", src:"aliexpress", pr:2500,
+  why:"Ruka u policijskom stisku umesto okrenuta dlanom nadole - za one sa bolovima zgloba.",
+  pros:["Skida pritisak sa zgloba","Brza navika - par dana","Bežičan"],
+  cons:["Nije za gaming preciznost","Traži par dana privikavanja"],
+  u:["kanc"], p:["zdravlje"], t:1, b:1, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-vertical-mouse-ergonomic.html"},
+ {id:"keeb", e:"⚒️", n:"Mehanička tastatura (TKL)", c:"kanc", src:"gigatron", pr:5500,
+  why:"Mehanički prekidači i kompaktan format bez numerike - kucanje koje se čuje i oseti.",
+  pros:["Traju desetine miliona klikova","Zamenjivi keycaps","Zvuk i osećaj na pogon"],
+  cons:["Glasnija od membranske","Prevoz zahteva torbu"],
+  u:["kanc"], p:["komfort","zabava"], t:3, b:2, f:2,
+  url:"https://gigatron.rs/pretraga?q=mehanicka+tastatura"},
+ {id:"powerbank", e:"🔋", n:"Anker PowerCore 20.000 mAh", c:"put", src:"gigatron", pr:4800,
+  why:"Tri do pet punjenja telefona u džepu - standard za putovanja i dane van utičnice.",
+  pros:["Provereni ćeliji i elektronika","Brzo punjenje 22,5W","Dva USB porta"],
+  cons:["Teži od malih banci (380g)","Ne sme u prtljag za šek - samo u kabini"],
+  u:["put","svuda"], p:["bezbednost","komfort"], t:1, b:2, f:2,
+  url:"https://gigatron.rs/pretraga?q=anker+powercore+20000"},
+ {id:"gan", e:"⚡", n:"Anker 65W GaN punjač", c:"put", src:"gigatron", pr:6200,
+  why:"Jedan punjač za laptop, telefon i slušalice - tri puta manji od fabričke cigle.",
+  pros:["Napaja i laptop i telefon","Dva USB-C + jedan USB-A","Sitniji od bloka laptopa"],
+  cons:["Za gejming laptope traži 100W+"],
+  u:["put","kanc"], p:["vreme","komfort"], t:2, b:2, f:1,
+  url:"https://gigatron.rs/pretraga?q=anker+65w+gan"},
+ {id:"adapter", e:"🌍", n:"Univerzalni adapter za utičnice", c:"put", src:"aliexpress", pr:1400,
+  why:"Jedan blok za utičnice cele planete - reši i USB portove za punjenje u hodu.",
+  pros:["Pokriva EU, US, UK, AU","Ugrađeni USB portovi","Mali kao kutija šibica"],
+  cons:["Nije pretvarač napona (220→110V ne)"],
+  u:["put"], p:["vreme","komfort"], t:1, b:1, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-universal-travel-adapter.html"},
+ {id:"bag", e:"🎒", n:"Vodootporna torba za laptop do 15,6 inča", c:"put", src:"aliexpress", pr:2900,
+  why:"Osnovna zaštitna oprema za grad i avion: kiša, kafa i udarci ostaju spolja.",
+  pros:["Membrana koja drži pljusak","Međusloj za udarce","Džepovi za punjač i dokumente"],
+  cons:["Bez tvrdog okvira za oštre udarce"],
+  u:["put","kanc"], p:["bezbednost","komfort"], t:1, b:1, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-waterproof-laptop-bag-15.html"},
+ {id:"tws", e:"🎧", n:"Redmi Buds 5 (TWS)", c:"put", src:"gigatron", pr:3800,
+  why:"Slušalice bez kablova sa aktivnom izolacijom buke - najbolji odnos zvuka i cene.",
+  pros:["Aktivna redukcija buke","6-8h po punjenju + futrola","Bluetooth 5.3 stabilno"],
+  cons:["Mikrofon samo zadovoljava za pozive"],
+  u:["put","svuda"], p:["zabava","komfort"], t:1, b:2, f:1,
+  url:"https://gigatron.rs/pretraga?q=redmi+buds+5"},
+ {id:"band", e:"⌚", n:"Xiaomi Smart Band 9", c:"put", src:"gigatron", pr:5500,
+  why:"Narukvica koja meri san, puls i korake - tri nedelje baterije i ekrana koji se vidi na suncu.",
+  pros:["Do 21 dan baterije","Merenje sna i pulsa","Plivanje bez brige (5ATM)"],
+  cons:["Pouzdanost GPS-a preko telefona"],
+  u:["svuda","kuca"], p:["zdravlje","zabava"], t:1, b:2, f:1,
+  url:"https://gigatron.rs/pretraga?q=xiaomi+smart+band+9"},
+ {id:"camera", e:"📷", n:"Xiaomi kamera 360° 2K", c:"bezb", src:"gigatron", pr:5500,
+  why:"Oko koje se okreće za ceo prostor - praćenje u realnom vremenu i snimak na karticu.",
+  pros:["Obuhvata celu sobu rotacijom","Noćni vid u boji","Detekcija kretanja sa obaveštenjem"],
+  cons:["Za svaki pogled traži aplikaciju","Ne diraj je u kupatilu - privatnost"],
+  u:["kuca"], p:["bezbednost"], t:2, b:2, f:1,
+  url:"https://gigatron.rs/pretraga?q=xiaomi+kamera+360"},
+ {id:"yubi", e:"🔑", n:"YubiKey 5 NFC", c:"bezb", src:"amazon", pr:9000,
+  why:"Fizički ključ za dvofaktornu prijavu - nema koda koje se kradu, ima ključa koji je u džepu.",
+  pros:["Ne može se phishingovati","Radi sa Google, Microsoft, GitHub...","Vodootporan bez baterije"],
+  cons:["Vredi izgubiti ga ako nemaš rezervni","Nije svaki sajt podržava"],
+  u:["svuda","kanc"], p:["bezbednost"], t:3, b:3, f:1,
+  url:"https://www.amazon.de/s?k=yubikey+5+nfc"},
+ {id:"aqara", e:"🚪", n:"Aqara senzor vrata i prozora", c:"bezb", src:"aliexpress", pr:2200,
+  why:"Obaveštenje na telefon kad se vrata otvore - jeftin atom sigurnosnog sistema.",
+  pros:["Trajna baterija do 2 godine","Trenutna obaveštenja","Mali, neprimetan"],
+  cons:["Traži Zigbee hub (nije samostalan)"],
+  u:["kuca"], p:["bezbednost"], t:3, b:1, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-aqara-door-sensor.html"},
+ {id:"vpn", e:"🛡️", n:"VPN (NordVPN, 2-godišnji plan)", c:"bezb", src:"web", pr:"od 2,99 €/mes.",
+  why:"Saobraćaj ti je šifriran i na javnom WiFi - tunel do kuće, i iz kafića i sa aerodroma.",
+  pros:["Šifriranje na javnim mrežama","Preko 6.000 servera","Radi na 6 uređaja odjednom"],
+  cons:["Mesečna pretplata, ne jednokratno","Smanjuje brzinu za 10-20%"],
+  u:["svuda","put"], p:["bezbednost"], t:2, b:2, f:1, soft:true,
+  url:"https://nordvpn.com/"},
+ {id:"bitwarden", e:"🔐", n:"Bitwarden Premium (menadžer lozinki)", c:"bezb", src:"web", pr:"10 $/god.",
+  why:"Jedna glavna lozinka za sve - i generator jakih lozinki umesto tri varijante iste.",
+  pros:["Rad na svim pregledačima i telefonima","Otvoren kod - proverljivo","Sinhronizacija kroz šifrirani trezor"],
+  cons:["Besplatna verzija pokriva 80% potreba"],
+  u:["svuda"], p:["bezbednost","vreme"], t:2, b:1, f:1, soft:true,
+  url:"https://bitwarden.com/"},
+ {id:"tag", e:"📍", n:"Pametne nalepnice za traženje (4 kom)", c:"bezb", src:"aliexpress", pr:1800,
+  why:"Ključevi, novčanik, torba - sve zazvoni iz aplikacije kad ga ne možeš naći.",
+  pros:["Zvuk i mapa poslednje lokacije","Tanke kao nalepnica","Traju oko godinu dana"],
+  cons:["Radi najbolje uz sličan ekosistem (Mi/Apple)"],
+  u:["svuda","put"], p:["komfort","bezbednost"], t:1, b:1, f:1,
+  url:"https://www.aliexpress.com/w/wholesale-xiaomi-smart-tag-finder.html"}
+];
+
+/* ===== pitanja asistenta ===== */
+const FQ = [
+ {q:"Za koga kupuješ?", hint:"Da pogodimo ton i tip preporuke.", o:[
+   {t:"Za sebe", v:{q1:"ja"}},
+   {t:"Poklon za nekog", v:{q1:"poklon"}},
+   {t:"Za ceo dom", v:{q1:"dom"}}]},
+ {q:"Gde ćeš ga najviše koristiti?", hint:"Prostor određuje kategoriju.", o:[
+   {t:"🏠 Kuća", v:{q2:"kuca"}},
+   {t:"💼 Kancelarija", v:{q2:"kanc"}},
+   {t:"✈️ Na putu", v:{q2:"put"}},
+   {t:"🌍 Svuda podjednako", v:{q2:"svuda"}}]},
+ {q:"Koliko si spreman da izdvojiš?", hint:"Cene su orijentacione, u dinarima.", o:[
+   {t:"Do 3.000 din", v:{q3:1}},
+   {t:"3.000 - 8.000 din", v:{q3:2}},
+   {t:"8.000 - 15.000 din", v:{q3:3}},
+   {t:"Bez ograničenja", v:{q3:4}}]},
+ {q:"Šta ti je najvažnije?", hint:"Glavni problem koji gadget treba da reši.", o:[
+   {t:"⏱️ Ušteda vremena", v:{q4:"vreme"}},
+   {t:"💚 Zdravlje", v:{q4:"zdravlje"}},
+   {t:"🛋️ Komfor", v:{q4:"komfort"}},
+   {t:"🔒 Bezbednost", v:{q4:"bezbednost"}},
+   {t:"🎮 Zabava", v:{q4:"zabava"}}]},
+ {q:"Koliko si tehnički tip?", hint:"Da ne preporučimo nešto što traži inženjera.", o:[
+   {t:"Samo da radi", s:"bez podešavanja", v:{q5:1}},
+   {t:"Srednje", s:"podesim što treba", v:{q5:2}},
+   {t:"Geek mod", s:"svaka opcija dobro došla", v:{q5:3}}]},
+ {q:"Šta ti bolje leži?", hint:"Poslednje pitanje - pa preporuke.", o:[
+   {t:"🤏 Kompaktno i diskretno", v:{q6:1}},
+   {t:"💪 Moćno i trajno", v:{q6:2}}]}
+];
+
+/* ===== helpers ===== */
+const $ = s => document.querySelector(s);
+const fmtDin = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " din";
+function buyUrl(p){
+  const a = AFF[p.src === "web" ? "web" : p.src];
+  if(!a) return p.url;
+  return p.url + (p.url.includes("?") ? "&" : "?") + a.replace(/^[?&]/, "");
+}
+const PL = {vreme:"ušteda vremena", zdravlje:"zdravlje", komfort:"komfort", bezbednost:"bezbednost", zabava:"zabava"};
+
+/* ===== render kataloga ===== */
+function card(p){
+  const price = p.soft ? p.pr : fmtDin(p.pr);
+  return `<article class="pcard" data-id="${p.id}">
+    <div class="ptile"><span class="cat">${CATS[p.c]}</span>${p.e}</div>
+    <div class="pbody">
+      <h3>${p.n}</h3>
+      <p class="pwhy">${p.why}</p>
+      <ul class="plist">${p.pros.slice(0,2).map(x=>`<li>${x}</li>`).join("")}${p.cons[0]?`<li>${p.cons[0]}</li>`.replace("<li>","<li data-c>"): ""}</ul>
+      ${p.soft ? `<span class="pnote">Digitalna pretplata - provizija nam je delimično ponavljajuća.</span>` : ""}
+      <div class="prow">
+        <div class="price">${price}<small>${p.soft ? "pretplata" : "orijentaciono"}</small></div>
+        <a class="buy" href="${buyUrl(p)}" target="_blank" rel="nofollow noopener">Pogledaj ↗</a>
+      </div>
+      <span class="psrc">${SRC[p.src]} · partner link</span>
+    </div>
+  </article>`;
+}
+/* mark minus as con */
+document.head.insertAdjacentHTML("beforeend","<style>.plist li[data-c]{color:var(--warn)}.plist li[data-c]::before{content:'–';color:var(--warn)}</style>");
+
+const state = {cat:"sve", q:"", sort:"rec"};
+function renderGrid(){
+  let list = P.filter(p =>
+    (state.cat === "sve" || p.c === state.cat) &&
+    (!state.q || (p.n + " " + p.why + " " + CATS[p.c]).toLowerCase().includes(state.q)));
+  if(state.sort === "asc") list = [...list].sort((a,b)=>(a.soft?0:a.pr)-(b.soft?0:b.pr));
+  if(state.sort === "desc") list = [...list].sort((a,b)=>(b.soft?0:b.pr)-(a.soft?0:a.pr));
+  $("#grid").innerHTML = list.length
+    ? list.map(card).join("")
+    : `<div class="empty"><div class="e">🧐</div>Ništa ne odgovara pretrazi.<br>Probaj drugu reč ili <a href="#" onclick="resetF(event)">prikaži sve</a>.</div>`;
+}
+function resetF(e){ e.preventDefault(); state.q=""; $("#q").value=""; renderGrid(); }
+
+/* chips */
+$("#chips").innerHTML = [`<button class="chip on" data-c="sve">Sve</button>`,
+  ...Object.entries(CATS).map(([k,v])=>`<button class="chip" data-c="${k}">${v}</button>`)].join("");
+$("#chips").addEventListener("click", e=>{
+  const b = e.target.closest(".chip"); if(!b) return;
+  document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("on", c===b));
+  state.cat = b.dataset.c; renderGrid();
+});
+$("#q").addEventListener("input", e=>{ state.q = e.target.value.trim().toLowerCase(); renderGrid(); });
+$("#sort").addEventListener("change", e=>{ state.sort = e.target.value; renderGrid(); });
+renderGrid();
+
+/* ===== asistent ===== */
+let fstep = 0; const fans = {};
+function renderQ(){
+  const st = FQ[fstep];
+  $("#fq").textContent = st.q;
+  $("#fhint").textContent = st.hint;
+  $("#fopts").innerHTML = st.o.map((o,i)=>
+    `<button class="opt" data-i="${i}">${o.t}${o.s?`<small>${o.s}</small>`:""}</button>`).join("");
+  $("#fprog").style.width = (fstep / FQ.length * 100) + "%";
+  $("#fdots").innerHTML = FQ.map((_,i)=>`<i class="${i<=fstep?"on":""}"></i>`).join("");
+  $("#fback").style.display = fstep ? "inline-block" : "none";
+}
+$("#fopts").addEventListener("click", e=>{
+  const b = e.target.closest(".opt"); if(!b) return;
+  Object.assign(fans, FQ[fstep].o[+b.dataset.i].v);
+  fstep++;
+  if(fstep < FQ.length) renderQ(); else showRes();
+});
+$("#fback").addEventListener("click", ()=>{ if(fstep>0){ fstep--; renderQ(); }});
+$("#frestart").addEventListener("click", ()=>{ fstep=0; for(const k in fans) delete fans[k];
+  $("#fres").style.display="none"; $("#fsteps").style.display="block"; renderQ(); });
+
+function score(p){
+  let s = 0, r = [];
+  const u2 = fans.q2, a4 = fans.q4, a3 = fans.q3, a5 = fans.q5, a6 = fans.q6, a1 = fans.q1;
+  if(u2 && (p.u.includes(u2))) { s += 4; r.push(u2==="svuda" ? "za svakodnevnu upotrebu" : `najviše se koristi ${u2==="kuca"?"kod kuće":u2==="kanc"?"u kancelariji":"na putu"}`); }
+  else if(u2 === "svuda") s += 1;
+  if(u2 && u2 !== "svuda" && p.c === u2) s += 1;
+  if(a4 && p.p.includes(a4)) { s += 4; r.push("rešava tvoj prioritet - " + PL[a4]); }
+  if(!p.soft && a3){
+    if(p.b === a3) { s += 3; r.push("tačno u tvom budžetu"); }
+    else if(p.b === a3 - 1) { s += 2; r.push("ispod tvog budžeta"); }
+    else if(p.b < a3 - 1) s += 1;
+    else if(p.b === a3 + 1) s -= 1;
+    else { s -= 3; }
+  } else if(p.soft && a3 >= 2) { s += 2; r.push("mesečna pretplata umesto velike investicije"); }
+  if(a5){ if(p.t <= a5) s += 1; else s -= 2; }
+  if(a6 && p.f === a6) s += 1;
+  if(a1 === "dom" && p.c === "kuca"){ s += 2; r.push("za ceo dom"); }
+  if(a1 === "poklon" && (p.p.includes("zabava") || p.p.includes("zdravlje"))) s += 1;
+  if(a1 === "ja") s += 1;
+  return {s, r};
+}
+function showRes(){
+  const scored = P.map(p=>({p, ...score(p)})).sort((a,b)=>b.s-a.s);
+  const top = scored.slice(0,3);
+  const mx = 15;
+  $("#fdone").innerHTML = `Za <b>${fans.q1==="ja"?"tebe":fans.q1==="poklon"?"poklon":"ceo dom"}</b> · `+
+    `<b>${{kuca:"kod kuće",kanc:"u kancelariji",put:"na putu",svuda:"svuda"}[fans.q2]}</b> · prioritet: <b>${PL[fans.q4]}</b>. Ovako bi nam leglo:`;
+  $("#rcards").innerHTML = top.map(({p, s, r}, i)=>{
+    const pct = Math.max(35, Math.min(99, Math.round(s / mx * 100)));
+    return `<div class="rcard">
+      <div class="ic">${p.e}</div>
+      <div>
+        <h4>${i+1}. ${p.n}</h4>
+        <div class="rr">${r.length ? "<b>Zašto:</b> " + r.slice(0,3).join(" · ") : ""}</div>
+        <div class="prow" style="border:none;padding-top:0">
+          <div class="price">${p.soft ? p.pr : fmtDin(p.pr)}<small>${p.soft ? "pretplata" : "orijentaciono"}</small></div>
+          <a class="buy" href="${buyUrl(p)}" target="_blank" rel="nofollow noopener">${SRC[p.src]} ↗</a>
+        </div>
+      </div>
+      <span class="match">${pct}% poklapanje</span>
+    </div>`;
+  }).join("");
+  $("#fsteps").style.display = "none";
+  $("#fres").style.display = "block";
+  $("#fprog").style.width = "100%";
+}
+function out(a){ a.href = buyUrl(P.find(p=>p.id === a.closest("[data-id],[class*=rcard]")?.dataset?.id || "") ) || a.href; return true; }
+renderQ();
+
+/* ===== tema + totop ===== */
+const TKEY = "kp-theme";
+function applyTheme(t){ document.documentElement.dataset.theme = t; $("#themeBtn").textContent = t === "dark" ? "☀️" : "🌓"; }
+let theme = localStorage.getItem(TKEY) || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+applyTheme(theme);
+$("#themeBtn").addEventListener("click", ()=>{
+  theme = theme === "dark" ? "light" : "dark";
+  localStorage.setItem(TKEY, theme); applyTheme(theme);
+});
+addEventListener("scroll", ()=>{ $("#totop").classList.toggle("on", scrollY > 600); }, {passive:true});
+$("#totop").addEventListener("click", ()=>scrollTo({top:0, behavior:"smooth"}));
+</script>
+</body>
+</html>
