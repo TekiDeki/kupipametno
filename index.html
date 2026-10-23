@@ -323,7 +323,7 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
 "use strict";
 /* ===== partner parametri (prazno = cisti linkovi; dopuni posle odobrenja programa) ===== */
 const AFF = {
-  aliexpress: "",   // npr. "?aff_fcid=...&aff_pid=..."
+  aliexpress: "",   // AliExpress: linkuri s.click per produs (campul a), generate in Portals
   gigatron: "",
   amazon: "",
   web: ""
@@ -339,31 +339,31 @@ const P = [
   pros:["Preporučuje se za alergije i prašinu","Radi gotovo nečujno noću","Upravlja se iz aplikacije"],
   cons:["Filter menjati na 6-12 meseci","Nije za velike prostorije"],
   u:["kuca"], p:["zdravlje"], t:2, b:3, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-xiaomi-air-purifier-4-lite.html"},
+  url:"https://www.aliexpress.com/w/wholesale-xiaomi-air-purifier-4-lite.html", a:"https://s.click.aliexpress.com/e/_c4qfIUyf"},
  {id:"robovac", e:"🤖", n:"Mijia robot usisivač (serija G)", c:"kuca", src:"aliexpress", pr:23000,
   why:"Usisava umesto tebe po rasporedu - svaki dan čista pod bez podizanja prsta.",
   pros:["Radi po rasporedu i bez tebe","Vraća se sam na stanicu za punjenje","Usisava i prašinu i dlake"],
   cons:["Ćoškovi i ivice ostaju njemu nedostupni","Za tepihe traži jaču klasu"],
   u:["kuca"], p:["vreme"], t:2, b:4, f:2,
-  url:"https://www.aliexpress.com/w/wholesale-mijia-robot-vacuum-g10.html"},
+  url:"https://www.aliexpress.com/w/wholesale-mijia-robot-vacuum-g10.html", a:"https://s.click.aliexpress.com/e/_c3sm035V"},
  {id:"smartset", e:"💡", n:"Xiaomi pametna sijalica + utičnica set", c:"kuca", src:"aliexpress", pr:3500,
   why:"Najjeftiniji ulaz u pametni dom: svetlo po raspoloženju i utičnica koja sluša telefon.",
   pros:["Radi sa Mi Home aplikacijom","Nije potreban dodatni hub","Podesiva boja i jačina"],
   cons:["Traži 2,4 GHz WiFi","Sijalica greje lampu zatvorenog tipa"],
   u:["kuca"], p:["komfort","zabava"], t:2, b:2, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-xiaomi-smart-bulb-smart-plug.html"},
+  url:"https://www.aliexpress.com/w/wholesale-xiaomi-smart-bulb-smart-plug.html", a:"https://s.click.aliexpress.com/e/_c306kEXl"},
  {id:"airfryer", e:"🍟", n:"Air fryer (friteza bez ulja) 4L", c:"kuca", src:"aliexpress", pr:11000,
   why:"Hrskavo iz pećnice bez pola litre ulja - brža i zdravija varijanta svakodnevne kuhinje.",
   pros:["Do 80% manje ulja","Brža od rerna za male porcije","Lako se čisti"],
   cons:["Zauzima deo pulta","Za porodicu traži veću zapreminu"],
   u:["kuca"], p:["zdravlje","vreme"], t:1, b:3, f:2,
-  url:"https://www.aliexpress.com/w/wholesale-xiaomi-mi-air-fryer.html"},
+  url:"https://www.aliexpress.com/w/wholesale-xiaomi-mi-air-fryer.html", a:"https://s.click.aliexpress.com/e/_c4Wblknl"},
  {id:"humid", e:"💨", n:"Ultrazvučni ovlaživač vazduha 4L", c:"kuca", src:"aliexpress", pr:4000,
   why:"Rešava suv vazduh tokom grejne sezone - grlo i koža osete razliku za par dana.",
   pros:["Tihi rad pogodan za spavanje","Veliki rezervoar radi celu noć","Podesiva izmaglica"],
   cons:["Traži demineralizovanu vodu","Potreban redovan čišćenje"],
   u:["kuca"], p:["zdravlje","komfort"], t:1, b:2, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-xiaomi-humidifier-4l.html"},
+  url:"https://www.aliexpress.com/w/wholesale-xiaomi-humidifier-4l.html", a:"https://s.click.aliexpress.com/e/_c3hpAqIx"},
  {id:"ups", e:"🔌", n:"Mini UPS za ruter (12V)", c:"kuca", src:"gigatron", pr:6500,
   why:"Kad nestane struje, internet ostaje - ruter i optički terminal rade još 3-5 sati.",
   pros:["Net i WiFi tokom nestanka","Štiti ruter od skokova napona","Bez održavanja"],
@@ -381,25 +381,25 @@ const P = [
   pros:["HDMI za spoljni monitor","Čita SD mikroSD kartice","Napaja laptop istovremeno"],
   cons:["4K samo na 30Hz","Kratki kabl"],
   u:["kanc","put"], p:["komfort","vreme"], t:2, b:2, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-anker-341-usb-c-hub.html"},
+  url:"https://www.aliexpress.com/w/wholesale-anker-341-usb-c-hub.html", a:"https://s.click.aliexpress.com/e/_c3usHmLl"},
  {id:"stand", e:"💻", n:"Aluminijumski nosač za laptop", c:"kanc", src:"aliexpress", pr:2800,
   why:"Diže ekran u visinu očiju - najjeftinija popravka za vrat i leđa pri celodnevnom radu.",
   pros:["Podesiv ugao","Sklapa se ravno za torbu","Hladi laptop protokom vazduha"],
   cons:["Traži zasebnu tastaturu za pun efekat"],
   u:["kanc"], p:["zdravlje"], t:1, b:1, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-aluminum-laptop-stand.html"},
+  url:"https://www.aliexpress.com/w/wholesale-aluminum-laptop-stand.html", a:"https://s.click.aliexpress.com/e/_c3szddTh"},
  {id:"lamp", e:"🔦", n:"LED lampa za rad, podesiva", c:"kanc", src:"aliexpress", pr:3200,
   why:"Ravnomerno svetlo bez senki na ekranu - oči manje zamore na dužim sesijama.",
   pros:["Podesiva temperatura i jačina","Nema treperenja","Mala površina na stolu"],
   cons:["Najbolji ugao traži nameštanje"],
   u:["kanc","kuca"], p:["zdravlje","komfort"], t:1, b:2, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-led-desk-lamp-eye-caring.html"},
+  url:"https://www.aliexpress.com/w/wholesale-led-desk-lamp-eye-caring.html", a:"https://s.click.aliexpress.com/e/_c3ykP571"},
  {id:"vmouse", e:"🖱️", n:"Vertikalni ergonomski miš", c:"kanc", src:"aliexpress", pr:2500,
   why:"Ruka u policijskom stisku umesto okrenuta dlanom nadole - za one sa bolovima zgloba.",
   pros:["Skida pritisak sa zgloba","Brza navika - par dana","Bežičan"],
   cons:["Nije za gaming preciznost","Traži par dana privikavanja"],
   u:["kanc"], p:["zdravlje"], t:1, b:1, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-vertical-mouse-ergonomic.html"},
+  url:"https://www.aliexpress.com/w/wholesale-vertical-mouse-ergonomic.html", a:"https://s.click.aliexpress.com/e/_c3VK88XV"},
  {id:"keeb", e:"⚒️", n:"Mehanička tastatura (TKL)", c:"kanc", src:"gigatron", pr:5500,
   why:"Mehanički prekidači i kompaktan format bez numerike - kucanje koje se čuje i oseti.",
   pros:["Traju desetine miliona klikova","Zamenjivi keycaps","Zvuk i osećaj na pogon"],
@@ -423,13 +423,13 @@ const P = [
   pros:["Pokriva EU, US, UK, AU","Ugrađeni USB portovi","Mali kao kutija šibica"],
   cons:["Nije pretvarač napona (220→110V ne)"],
   u:["put"], p:["vreme","komfort"], t:1, b:1, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-universal-travel-adapter.html"},
+  url:"https://www.aliexpress.com/w/wholesale-universal-travel-adapter.html", a:"https://s.click.aliexpress.com/e/_c3Acaoyf"},
  {id:"bag", e:"🎒", n:"Vodootporna torba za laptop do 15,6 inča", c:"put", src:"aliexpress", pr:2900,
   why:"Osnovna zaštitna oprema za grad i avion: kiša, kafa i udarci ostaju spolja.",
   pros:["Membrana koja drži pljusak","Međusloj za udarce","Džepovi za punjač i dokumente"],
   cons:["Bez tvrdog okvira za oštre udarce"],
   u:["put","kanc"], p:["bezbednost","komfort"], t:1, b:1, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-waterproof-laptop-bag-15.html"},
+  url:"https://www.aliexpress.com/w/wholesale-waterproof-laptop-bag-15.html", a:"https://s.click.aliexpress.com/e/_c4DBo40B"},
  {id:"tws", e:"🎧", n:"Redmi Buds 5 (TWS)", c:"put", src:"gigatron", pr:3800,
   why:"Slušalice bez kablova sa aktivnom izolacijom buke - najbolji odnos zvuka i cene.",
   pros:["Aktivna redukcija buke","6-8h po punjenju + futrola","Bluetooth 5.3 stabilno"],
@@ -459,7 +459,7 @@ const P = [
   pros:["Trajna baterija do 2 godine","Trenutna obaveštenja","Mali, neprimetan"],
   cons:["Traži Zigbee hub (nije samostalan)"],
   u:["kuca"], p:["bezbednost"], t:3, b:1, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-aqara-door-sensor.html"},
+  url:"https://www.aliexpress.com/w/wholesale-aqara-door-sensor.html", a:"https://s.click.aliexpress.com/e/_c3XXKKuf"},
  {id:"vpn", e:"🛡️", n:"VPN (NordVPN, 2-godišnji plan)", c:"bezb", src:"web", pr:"od 2,99 €/mes.",
   why:"Saobraćaj ti je šifriran i na javnom WiFi - tunel do kuće, i iz kafića i sa aerodroma.",
   pros:["Šifriranje na javnim mrežama","Preko 6.000 servera","Radi na 6 uređaja odjednom"],
@@ -477,7 +477,7 @@ const P = [
   pros:["Zvuk i mapa poslednje lokacije","Tanke kao nalepnica","Traju oko godinu dana"],
   cons:["Radi najbolje uz sličan ekosistem (Mi/Apple)"],
   u:["svuda","put"], p:["komfort","bezbednost"], t:1, b:1, f:1,
-  url:"https://www.aliexpress.com/w/wholesale-xiaomi-smart-tag-finder.html"}
+  url:"https://www.aliexpress.com/w/wholesale-xiaomi-smart-tag-finder.html", a:"https://s.click.aliexpress.com/e/_c3aucoUn"}
 ];
 
 /* ===== pitanja asistenta ===== */
@@ -515,6 +515,7 @@ const FQ = [
 const $ = s => document.querySelector(s);
 const fmtDin = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " din";
 function buyUrl(p){
+  if(p.a) return p.a;
   const a = AFF[p.src === "web" ? "web" : p.src];
   if(!a) return p.url;
   return p.url + (p.url.includes("?") ? "&" : "?") + a.replace(/^[?&]/, "");
