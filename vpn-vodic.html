@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Da li vam treba VPN u Srbiji? Iskren vodič - Kupi Pametno</title>
+<meta name="description" content="VPN u Srbiji je potpuno legalan - ali da li VAM treba? Šta VPN stvarno štiti, a šta ne, zašto su besplatni VPN rizični i kako izabrati bez marketinga.">
+<meta name="theme-color" content="#0b8457">
+<link rel="canonical" href="https://kupipametno.freehtml.dev/vpn-vodic">
+<meta property="og:title" content="Da li vam treba VPN u Srbiji? Iskren vodič">
+<meta property="og:description" content="Šta VPN stvarno štiti (a šta ne), besplatan vs plaćen i kako izabrati - bez straha i marketinga.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b8457'/%3E%3Cpath d='M32 12l16 6v12c0 11-7 18-16 22-9-4-16-11-16-22V18z' fill='none' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M25 32l5 5 9-10' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f6f8f5; --bg2:#eef2ec; --surf:#ffffff; --surf2:#f1f5f0; --ink:#182620; --mut:#5b6b62;
+  --ac:#0b8457; --ac2:#0aa06a; --acsoft:#e2f3ea; --acink:#075c3c;
+  --warn:#b45309; --warnsoft:#fdf1e3;
+  --bd:#dde5dd; --sh:0 1px 2px rgba(24,38,32,.05),0 8px 24px rgba(24,38,32,.07);
+  --sh2:0 2px 4px rgba(24,38,32,.06),0 14px 40px rgba(24,38,32,.12);
+  --r:18px; --rad:999px;
+}
+[data-theme="dark"]{
+  --bg:#0d1512; --bg2:#101a16; --surf:#15201b; --surf2:#1b2822; --ink:#e9f1ec; --mut:#93a69b;
+  --ac:#31c98b; --ac2:#4ade9e; --acsoft:#12352a; --acink:#7de8bd;
+  --warn:#e8a55a; --warnsoft:#33251688;
+  --bd:#243329; --sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  --sh2:0 2px 6px rgba(0,0,0,.35),0 18px 50px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+a{color:var(--ac);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{line-height:1.22;letter-spacing:-.02em}
+img,svg{vertical-align:middle}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
+.hbar{display:flex;align-items:center;gap:18px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.02em}
+.logo:hover{text-decoration:none}
+.logo .lmark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;color:#fff;box-shadow:var(--sh)}
+.logo .lmark svg{width:20px;height:20px}
+nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+nav a{color:var(--mut);font-weight:600;font-size:14.5px;padding:8px 12px;border-radius:10px}
+nav a:hover{color:var(--ink);background:var(--surf2);text-decoration:none}
+.tbtn{width:38px;height:38px;border-radius:11px;border:1px solid var(--bd);background:var(--surf);color:var(--ink);cursor:pointer;display:grid;place-items:center;font-size:17px;transition:transform .15s}
+.tbtn:hover{transform:scale(1.07)}
+@media(max-width:680px){nav a{display:none}}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:16px;padding:13px 24px;border-radius:13px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn.pri{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;box-shadow:0 8px 22px color-mix(in srgb,var(--ac) 35%,transparent)}
+.btn.pri:hover{transform:translateY(-2px);text-decoration:none}
+.btn.gho{background:var(--surf);color:var(--ink);border:1px solid var(--bd);box-shadow:var(--sh)}
+.btn.gho:hover{text-decoration:none;background:var(--surf2)}
+
+/* ---------- article ---------- */
+main{padding:52px 0 30px}
+.art{max-width:720px;margin:0 auto}
+.art h1{font-size:clamp(26px,4vw,38px);font-weight:800;line-height:1.15;margin:8px 0 14px}
+.art .meta{color:var(--mut);font-size:14px;margin-bottom:26px}
+.art p{font-size:17px;line-height:1.7;margin:0 0 18px}
+.art h2{font-size:23px;font-weight:800;margin:34px 0 12px}
+.art ul{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;margin:0 0 20px}
+.art li{padding-left:26px;position:relative;font-size:16px;line-height:1.6}
+.art li.ok::before{content:"✓";position:absolute;left:0;color:var(--ac);font-weight:800}
+.art li.no::before{content:"!";position:absolute;left:2px;color:var(--warn);font-weight:800}
+.art ul.pravila li{padding-left:18px}
+.art ul.pravila li::before{content:"-";position:absolute;left:0;color:var(--ac);font-weight:800}
+.cta{background:var(--surf);border:1.5px solid var(--ac);border-radius:var(--r);padding:26px;margin:30px 0;box-shadow:var(--sh2);text-align:center}
+.cta .e{font-size:34px;margin-bottom:8px}
+.cta h3{font-size:19px;font-weight:800;margin-bottom:6px}
+.cta p{font-size:14.5px;color:var(--mut);margin-bottom:16px}
+.banner{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,var(--acsoft),var(--surf2));border:1px solid var(--bd);border-radius:14px;padding:14px 18px;margin:28px 0;flex-wrap:wrap}
+.banner .be{font-size:26px}
+.banner b{font-size:15px}
+.banner span{font-size:13.5px;color:var(--mut);display:block}
+.banner a{margin-left:auto}
+.verdikt{background:var(--surf2);border-left:4px solid var(--ac);border-radius:0 14px 14px 0;padding:18px 22px;font-size:16.5px;line-height:1.7;margin:26px 0}
+.tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--acink);background:var(--acsoft);padding:5px 12px;border-radius:var(--rad)}
+.disc{font-size:12.5px;color:var(--mut);margin-top:26px;padding-top:14px;border-top:1px dashed var(--bd)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--bd);margin-top:48px;padding:26px 0}
+.fbot{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;color:var(--mut);font-size:13.5px}
+.fbot a{color:var(--mut);font-weight:600}
+.fbot a:hover{color:var(--ink)}
+@media(max-width:680px){.fbot{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<script>try{var _t=localStorage.getItem("kp-theme");if(_t==="dark"||(!_t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<header>
+  <div class="wrap hbar">
+    <a class="logo" href="/"><span class="lmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1.2 11a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span>Kupi Pametno</a>
+    <nav><a href="/#finder">Asistent</a><a href="/#katalog">Katalog</a><a href="/#kako">Kako biramo</a><a href="/#faq">Pitanja</a></nav>
+    <button class="tbtn" id="themeBtn" aria-label="Tema" title="Promeni temu">🌓</button>
+  </div>
+</header>
+<main>
+  <div class="wrap art">
+    <span class="tag">Vodič · Oktobar 2026.</span>
+    <h1>Da li vam treba VPN u Srbiji?</h1>
+    <p class="meta">Iskren vodič · oko 5 minuta čitanja</p>
+    <p>VPN se najčešće prodaje strahom: "bez njega si potpuno izložen". Realnost je običnija - VPN je tunel kroz koji ide sav tvoj internet saobraćaj, koristan u konkretnim situacijama, a besmislen kao magični štit. U Srbiji je potpuno legalan, provajderi po zakonu čuvaju metapodatke o komunikaciji, a pravo pitanje nije "da li je VPN dobar" nego "da li ga tvoje navike uopšte trebaju". Evo poštenog odgovora, u oba smera.</p>
+
+    <h2>Da li je VPN legalan u Srbiji?</h2>
+    <p>Da - korišćenje VPN-a je u Srbiji potpuno legalno za privatne korisnike. Nijedan zakon ga ne zabranjuje niti ograničava, za razliku od, recimo, Kine ili Rusije, gde je izbor VPN-ova strogo kontrolisan. Ono što ostaje ilegalno jesu same ilegalne radnje: VPN je alat, ne imunitet - piraterija, prevare i hakovanje kaznjivi su i kroz tunel.</p>
+
+    <h2>Šta VPN stvarno štiti</h2>
+    <ul>
+      <li class="ok">Saobraćaj od provajdera - po Zakonu o elektronskim komunikacijama operateri (Telekom, SBB, Yettel, A1) čuvaju metapodatke o komunikaciji do godinu dana: ko, kada i ka kojim servisima, ne i sam sadržaj. Uz VPN, provajder vidi samo da si povezan na VPN server</li>
+      <li class="ok">Javni Wi-Fi - u kafiću, na aerodromu ili u hotelu, drugi u istoj mreži mogu da vide nešifrovan saobraćaj; tunel to rešava u potpunosti</li>
+      <li class="ok">IP adresu od sajtova i reklama - umesto tvoje adrese i lokacije, vide adresu VPN servera</li>
+      <li class="ok">Sadržaj zaključan za druge zemlje - katalozi streaming servisa se razlikuju od regiona do regiona; realno, servisi to aktivno sprečavaju, pa ne radi uvek</li>
+      <li class="ok">Srpski sadržaj u inostranstvu - server u Srbiji znači da ti RTS, banke i eUprava rade kao da si kod kuće, dok putuješ</li>
+    </ul>
+
+    <h2>Šta VPN ne štiti</h2>
+    <ul>
+      <li class="no">Kamere na ulici - nadzor u Srbiji je legitimna tema (Radio slobodna Evropa je 2025. izvestila o tihoj nabavci opreme za još hiljada kamera u okviru projekta "Bezbedan grad"), ali VPN s tim nema nikakve veze: on štiti internet saobraćaj, a lice na ulici ne zamagljuje</li>
+      <li class="no">Zlonamerne aplikacije - špijunski softver na telefonu čita sve pre nego što uđe u tunel; protiv toga pomažu pažljiv izbor aplikacija i ažuriranja, ne VPN</li>
+      <li class="no">Prevare i phishing - VPN ne razlikuje pravi sajt banke od lažnog; to je posao pažnje i menadžera lozinki</li>
+      <li class="no">Posledice sopstvenih postupaka - dobar VPN ne vodi evidenciju o tome šta radiš, ali te ne čini neuhvatljivim ni za šta</li>
+    </ul>
+
+    <div class="banner">
+      <span class="be">🔐</span>
+      <div><b>VPN ne čini te anonimnim - čini tvoj saobraćaj privatnim</b><span>To je razlika između marketinga i onoga što alat stvarno radi.</span></div>
+      <a class="btn pri" href="/#katalog">Naše preporuke →</a>
+    </div>
+
+    <h2>Zašto besplatan VPN ume da bude gore nego ništa</h2>
+    <p>Posao VPN-a je da jedan provajder vidi tvoj saobraćaj umesto svih ostalih - a serveri i protok koštaju. Besplatni servisi taj račun zatvaraju prodajom podataka o pretraživanju oglašivačima, ograničenjem protoka i reklamama. Stara izreka ovde važi duplo: ako je proizvod besplatan, proizvod si ti. Ako ti VPN treba samo povremeno, bolje par nedelja probnog perioda ozbiljnog servisa nego trajno besplatan tunel nepoznatih vlasnika.</p>
+
+    <h2>Na šta gledati pri izboru</h2>
+    <ul class="pravila">
+      <li>Nezavisno auditirana no-logs politika - da provajder ne vodi evidenciju o tome šta radiš, potvrđeno revizijom, a ne samo obećanjem na sajtu</li>
+      <li>Kill switch - ako veza sa VPN serverom padne, internet se prekida, umesto da saobraćaj prođe otvoreno a da ti ne primetiš</li>
+      <li>Moderni protokoli - WireGuard danas znači brzinu i stabilnost, stariji protokoli su sporiji</li>
+      <li>Serveri u regionu - što je server bliži, to je veća brzina; server u Srbiji je poseban plus kad putuješ</li>
+      <li>Broj uređaja po nalogu - telefoni, računari i ukućani; ozbiljni servisi danas pokrivaju 5 do 10 uređaja</li>
+    </ul>
+
+    <h2>Koliko košta (orijentaciono)</h2>
+    <ul class="pravila">
+      <li>ozbiljan VPN na dvogodišnjem planu: oko 3 do 6 evra mesečno, uz plaćanje unapred</li>
+      <li>mesečna varijanta istog servisa: obično 10 do 15 evra - isplati se samo za kratke potrebe</li>
+      <li>pazi na obnovu: akcijska cena važi prvi period, obnova je gotovo uvek skuplja i piše sitnim slovima</li>
+    </ul>
+    <p>Dvogodišnji planovi izgledaju jeftino računato po mesecu, ali se plaćaju odjednom i obnavljaju po višoj ceni - uračunaj i to u odluku. Ozbiljni servisi daju garanciju povrata novca u roku od 30 dana, pa proba realno ne košta ništa osim vremena.</p>
+
+    <h2>Da li VAM treba?</h2>
+    <ul class="pravila">
+      <li>Verovatno ne, ako: internet koristiš samo od kuće, javni Wi-Fi zaobilaziš, sadržaj zaključan za druge zemlje te ne boli, a metapodaci ti ne spavaju - uštedi novac</li>
+      <li>Vredi, ako: često putuješ i vezuješ se na javne mreže, gledaš sadržaj koji kod nas nije dostupan ili na javnim mrežama radiš osetljive stvari</li>
+      <li>Razmisli, ako: ti je privatnost stvar principa - onda traži auditiranu no-logs politiku i kill switch, a ne najveći broj servera na plakatu</li>
+    </ul>
+
+    <div class="verdikt"><b>Naš verdikt:</b> VPN u Srbiji nije obavezna oprema - to je alat za tri konkretne situacije: javni Wi-Fi, sadržaj iz drugih regiona i privatnost od provajdera. Ako se prepoznaješ u bar jednoj, probaj ozbiljan servis dok traje garancija povrata. Ako se ne prepoznaješ ni u jednoj, besplatan menadžer lozinki iz <a href="/#katalog">našeg kataloga</a> ti daje više stvarne sigurnosti nego VPN koji ne koristiš. U delu za bezbednost kataloga stoji i NordVPN, sa prednostima i manama napisanim na kartici.</div>
+
+    <div class="cta">
+      <div class="e">🛡️</div>
+      <h3>Ne znaš šta ti treba?</h3>
+      <p>Asistent postavlja šest pitanja o tvojim navikama i budžetu pa izbacuje tri preporuke sa razlozima - bez naloga, za 60 sekundi.</p>
+      <a class="btn pri" href="/#finder">Probaj asistent →</a>
+    </div>
+
+    <p class="disc"><b>Transparencija:</b> u našem katalogu deo linkova ka prodavnicama jesu partner linkovi i jasno su označeni - ako kupiš preko njih, zaradimo malu proviziju, a tebi ne košta ni dinar više. Mišljenja su naša, a mane uvek napišemo uz prednosti.</p>
+  </div>
+</main>
+<footer>
+  <div class="wrap fbot">
+    <span>© 2026 <a href="/">Kupi Pametno</a> - nezavisni vodič za gadgete u Srbiji.</span>
+    <span>Napravljeno bez kolačića i prijava. 🌱</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById("themeBtn");
+  function apply(t){document.documentElement.dataset.theme=t;b.textContent=t==="dark"?"☀️":"🌓";}
+  var t=localStorage.getItem("kp-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  apply(t);
+  b.addEventListener("click",function(){t=t==="dark"?"light":"dark";localStorage.setItem("kp-theme",t);apply(t);});
+})();
+</script>
+</body>
+</html>
