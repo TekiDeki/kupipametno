@@ -96,6 +96,7 @@ section{padding:56px 0}
 .gcard p{color:var(--mut);font-size:14.5px;max-width:520px}
 .gcard .btn{margin-left:auto}
 @media(max-width:680px){.gcard{gap:14px}.gcard .btn{margin-left:0;width:100%;justify-content:center}}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px}
 
 /* ---------- finder ---------- */
 .finder{background:var(--surf);border:1px solid var(--bd);border-radius:26px;box-shadow:var(--sh2);padding:34px;max-width:780px;margin:0 auto;position:relative;overflow:hidden}
@@ -292,14 +293,26 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
 
 <section id="vodici">
   <div class="wrap">
-    <div class="gcard">
-      <div class="ge">📖</div>
-      <div class="gt">
-        <span class="tag">Vodič · novo</span>
-        <h3>Da li TEMU vredi u Srbiji?</h3>
-        <p>Cene, PDV od 20% na kasi, carina preko 50 evra i rok isporuke - iskreno, bez uljepšavanja.</p>
+    <div class="shead"><h2>Vodiči</h2><p>Iskreni vodiči za kupovinu - bez uljepšavanja, bez lažnih popusta.</p></div>
+    <div class="ggrid">
+      <div class="gcard">
+        <div class="ge">🤖</div>
+        <div class="gt">
+          <span class="tag">Vodič · novo</span>
+          <h3>Kako izabrati robotski usisivač?</h3>
+          <p>LiDAR, snaga usisavanja, mop i baterija - šta stvarno menja iskustvo, a šta je marketing.</p>
+        </div>
+        <a class="btn pri" href="/robotski-usisivac-vodic">Pročitaj vodič →</a>
       </div>
-      <a class="btn pri" href="/temu-vredi-u-srbiji">Pročitaj vodič →</a>
+      <div class="gcard">
+        <div class="ge">📖</div>
+        <div class="gt">
+          <span class="tag">Vodič</span>
+          <h3>Da li TEMU vredi u Srbiji?</h3>
+          <p>Cene, PDV od 20% na kasi, carina preko 50 evra i rok isporuke - iskreno, bez uljepšavanja.</p>
+        </div>
+        <a class="btn pri" href="/temu-vredi-u-srbiji">Pročitaj vodič →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -328,7 +341,7 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
       </div>
       <div>
         <h4>Sajt</h4>
-        <ul><li><a href="#finder">Asistent za izbor</a></li><li><a href="#katalog">Katalog</a></li><li><a href="#kako">Kako biramo</a></li><li><a href="#faq">Pitanja</a></li><li><a href="/temu-vredi-u-srbiji">Vodič: Da li TEMU vredi?</a></li></ul>
+        <ul><li><a href="#finder">Asistent za izbor</a></li><li><a href="#katalog">Katalog</a></li><li><a href="#kako">Kako biramo</a></li><li><a href="#faq">Pitanja</a></li><li><a href="/#vodici">Vodiči</a></li></ul>
       </div>
       <div>
         <h4>Transparencija</h4>
