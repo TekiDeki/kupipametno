@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bezbednosni ključ (YubiKey) u Srbiji: iskren vodič - Kupi Pametno</title>
+<meta name="description" content="Fizički bezbednosni ključ je jedina 2FA metoda koja zaustavlja phishing u realnom vremenu. Šta stvarno štiti, šta ne, koji model uzeti i koliko košta u Srbiji.">
+<meta name="theme-color" content="#0b8457">
+<link rel="canonical" href="https://kupipametno.freehtml.dev/yubikey-vodic">
+<meta property="og:title" content="Bezbednosni ključ (YubiKey): poslednja odbrana kad ti ukradu sesiju">
+<meta property="og:description" content="SMS kod i aplikacija se danas zaobilaze. Fizički ključ ne može - ali ima svoje cene i svoje slepe tačke. Iskren vodič, sa cenama u Srbiji.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b8457'/%3E%3Cpath d='M32 12l16 6v12c0 11-7 18-16 22-9-4-16-11-16-22V18z' fill='none' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M25 32l5 5 9-10' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f6f8f5; --bg2:#eef2ec; --surf:#ffffff; --surf2:#f1f5f0; --ink:#182620; --mut:#5b6b62;
+  --ac:#0b8457; --ac2:#0aa06a; --acsoft:#e2f3ea; --acink:#075c3c;
+  --warn:#b45309; --warnsoft:#fdf1e3;
+  --bd:#dde5dd; --sh:0 1px 2px rgba(24,38,32,.05),0 8px 24px rgba(24,38,32,.07);
+  --sh2:0 2px 4px rgba(24,38,32,.06),0 14px 40px rgba(24,38,32,.12);
+  --r:18px; --rad:999px;
+}
+[data-theme="dark"]{
+  --bg:#0d1512; --bg2:#101a16; --surf:#15201b; --surf2:#1b2822; --ink:#e9f1ec; --mut:#93a69b;
+  --ac:#31c98b; --ac2:#4ade9e; --acsoft:#12352a; --acink:#7de8bd;
+  --warn:#e8a55a; --warnsoft:#33251688;
+  --bd:#243329; --sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  --sh2:0 2px 6px rgba(0,0,0,.35),0 18px 50px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+a{color:var(--ac);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{line-height:1.22;letter-spacing:-.02em}
+img,svg{vertical-align:middle}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
+.hbar{display:flex;align-items:center;gap:18px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.02em}
+.logo:hover{text-decoration:none}
+.logo .lmark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;color:#fff;box-shadow:var(--sh)}
+.logo .lmark svg{width:20px;height:20px}
+nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+nav a{color:var(--mut);font-weight:600;font-size:14.5px;padding:8px 12px;border-radius:10px}
+nav a:hover{color:var(--ink);background:var(--surf2);text-decoration:none}
+.tbtn{width:38px;height:38px;border-radius:11px;border:1px solid var(--bd);background:var(--surf);color:var(--ink);cursor:pointer;display:grid;place-items:center;font-size:17px;transition:transform .15s}
+.tbtn:hover{transform:scale(1.07)}
+@media(max-width:680px){nav a{display:none}}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:16px;padding:13px 24px;border-radius:13px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn.pri{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;box-shadow:0 8px 22px color-mix(in srgb,var(--ac) 35%,transparent)}
+.btn.pri:hover{transform:translateY(-2px);text-decoration:none}
+.btn.gho{background:var(--surf);color:var(--ink);border:1px solid var(--bd);box-shadow:var(--sh)}
+.btn.gho:hover{text-decoration:none;background:var(--surf2)}
+
+/* ---------- article ---------- */
+main{padding:52px 0 30px}
+.art{max-width:720px;margin:0 auto}
+.art h1{font-size:clamp(26px,4vw,38px);font-weight:800;line-height:1.15;margin:8px 0 14px}
+.art .meta{color:var(--mut);font-size:14px;margin-bottom:26px}
+.art p{font-size:17px;line-height:1.7;margin:0 0 18px}
+.art h2{font-size:23px;font-weight:800;margin:34px 0 12px}
+.art ul{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;margin:0 0 20px}
+.art li{padding-left:26px;position:relative;font-size:16px;line-height:1.6}
+.art li.ok::before{content:"✓";position:absolute;left:0;color:var(--ac);font-weight:800}
+.art li.no::before{content:"!";position:absolute;left:2px;color:var(--warn);font-weight:800}
+.art ul.pravila li{padding-left:18px}
+.art ul.pravila li::before{content:"-";position:absolute;left:0;color:var(--ac);font-weight:800}
+.cta{background:var(--surf);border:1.5px solid var(--ac);border-radius:var(--r);padding:26px;margin:30px 0;box-shadow:var(--sh2);text-align:center}
+.cta .e{font-size:34px;margin-bottom:8px}
+.cta h3{font-size:19px;font-weight:800;margin-bottom:6px}
+.cta p{font-size:14.5px;color:var(--mut);margin-bottom:16px}
+.banner{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,var(--acsoft),var(--surf2));border:1px solid var(--bd);border-radius:14px;padding:14px 18px;margin:28px 0;flex-wrap:wrap}
+.banner .be{font-size:26px}
+.banner b{font-size:15px}
+.banner span{font-size:13.5px;color:var(--mut);display:block}
+.banner a{margin-left:auto}
+.verdikt{background:var(--surf2);border-left:4px solid var(--ac);border-radius:0 14px 14px 0;padding:18px 22px;font-size:16.5px;line-height:1.7;margin:26px 0}
+.tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--acink);background:var(--acsoft);padding:5px 12px;border-radius:var(--rad)}
+.disc{font-size:12.5px;color:var(--mut);margin-top:26px;padding-top:14px;border-top:1px dashed var(--bd)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--bd);margin-top:48px;padding:26px 0}
+.fbot{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;color:var(--mut);font-size:13.5px}
+.fbot a{color:var(--mut);font-weight:600}
+.fbot a:hover{color:var(--ink)}
+@media(max-width:680px){.fbot{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<script>try{var _t=localStorage.getItem("kp-theme");if(_t==="dark"||(!_t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<header>
+  <div class="wrap hbar">
+    <a class="logo" href="/"><span class="lmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1.2 11a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span>Kupi Pametno</a>
+    <nav><a href="/#finder">Asistent</a><a href="/#katalog">Katalog</a><a href="/#kako">Kako biramo</a><a href="/#faq">Pitanja</a></nav>
+    <button class="tbtn" id="themeBtn" aria-label="Tema" title="Promeni temu">🌓</button>
+  </div>
+</header>
+<main>
+  <div class="wrap art">
+    <span class="tag">Vodič · Oktobar 2026.</span>
+    <h1>Bezbednosni ključ: poslednja odbrana kad ti ukradu sesiju</h1>
+    <p class="meta">Iskren vodič · oko 7 minuta čitanja</p>
+    <p>Dvofaktorska zaštita je godinama bila dovoljna: lozinka plus kod sa telefona. Danas nije. Ne zato što je kod slab, nego zato što napad više ne ide na kod - ide na sesiju koja je već otvorena. A kada se sesija ukrade, lozinka i kod su irelevantni, jer se ne prijavljuješ ponovo: ulaziš unutra kao da si ti.</p>
+    <p>Fizički bezbednosni ključ je jedina široko dostupna metoda koja to zaustavlja. Ali nije magija, ima cenu i ima situacije u kojima ne pomaže. Ovaj vodič je o tome.</p>
+
+    <h2>Šta ključ stvarno jeste</h2>
+    <p>To je mali uređaj u koji se ubode ili koji se prislanja na telefon. Unutra je čip koji čuva privatni ključ - i taj ključ fizički ne može da izađe iz njega. Računar šalje zahtev, ključ potpisuje, sajt proverava potpis. Lozinka se ne šalje nigde, kod se ne kuca, ništa što može da se prepiše ne postoji.</p>
+    <p>Standard se zove FIDO2, a ista tehnologija stoji i iza „passkey" opcija koje danas nude Google, Apple i Microsoft. Razlika je u tome gde ključ živi: kod passkey-a u procesoru telefona ili računara, kod fizičkog ključa u komadu plastike koji držiš u ruci i koji možeš da zaključaš u fioku.</p>
+
+    <h2>Zašto kod iz SMS-a i aplikacije više nije dovoljan</h2>
+    <ul>
+      <li class="no">Phishing posrednik (AiTM) - lažna stranica za prijavu stoji između tebe i pravog sajta. Ti ukucaš lozinku i kod, on ih prosledi pravom sajtu, prijava uspe, a napadač dobije kolačić sesije i nastavi da bude prijavljen. Kod je bio ispravan - samo je otišao na pogrešno mesto.</li>
+      <li class="no">Krađa sesije zlonamernim programom - infostealer na računaru pokupi sačuvane lozinke i aktivne sesije iz pregledača. SpyCloud je u izveštaju za 2026. objavio 8,6 milijardi ukradenih kolačića i sesija u jednoj godini.</li>
+      <li class="no">Microsoft u izveštaju o digitalnoj odbrani za 2025. pripisuje oko 80% zaobilaženja dvofaktorske zaštite krađi tokena sesije preko posredničkog phishinga.</li>
+      <li class="no">SMS ima i sopstveni problem - SIM swap, gde napadač prebaci tvoj broj na svoju karticu i dobija kodove.</li>
+    </ul>
+    <p>Zato se matematički menja slika kada se pređe na ključ: Microsoft navodi da phishing-rezistentna zaštita blokira preko 99% napada na identitete, a NIST je u verziji SP 800-63-4 iz 2025. traži takvu zaštitu na najvišim nivoima pouzdanosti. Razlog je jednostavan - ključ potpisuje samo za tačan domen. Na lažnoj stranici koja izgleda identično, ali je na drugom domenu, ključ odbija da potpiše. Nema šta da se prosledi.</p>
+
+    <div class="banner">
+      <span class="be">🔑</span>
+      <div><b>Ključ ne čuva lozinku - čuva potpis</b><span>Privatni ključ ne izlazi iz uređaja, pa nema šta da se ukrade niti prepiše.</span></div>
+      <a href="/#katalog">Katalog →</a>
+    </div>
+
+    <h2>Šta ključ rešava - a šta ne</h2>
+    <ul>
+      <li class="ok">Zaustavlja phishing u realnom vremenu - i onaj koji bi inače prošao pored koda iz aplikacije</li>
+      <li class="ok">Nema tajni na računaru - nema lozinke u pregledaču koju program može da pokupi za buduće prijave</li>
+      <li class="ok">Radi i bez telefona i bez interneta na samom ključu - nema baterije, nema aplikacije, nema ažuriranja</li>
+      <li class="no">Ne štiti sesiju koja je već ukradena - ako je kolačić otišao pre nego što si prešao na ključ, ključ to ne poništava; rešenje je odjava svih sesija, i to je prvo što se radi</li>
+      <li class="no">Ne pomaže ako servis dozvoljava slabiju rezervnu prijavu - ako je SMS i dalje moguć kao „zaboravio sam ključ", napadač bira taj put</li>
+      <li class="no">Ne podržava svaki servis - banke u Srbiji, eUprava i domaći portali uglavnom nemaju FIDO2; proveri pre kupovine gde ćeš ga stvarno koristiti</li>
+      <li class="no">Gubi se i lomi - i tada si zaključan iz svih naloga odjednom, ako nemaš drugi ključ</li>
+    </ul>
+
+    <h2>Koji model uzeti</h2>
+    <p>Postoje dve porodice, i razlika je u tome šta sve ključ ume osim prijave na sajtove.</p>
+    <ul class="pravila">
+      <li><b>Sigurnosni ključ (Security Key, FIDO2 samo)</b> - 4.500 do 4.800 dinara u srpskim prodavnicama, a 29 dolara na globalnom tržištu. Radi passkey i prijavu na sajtove, ništa više. Za većinu ljudi ovo je dovoljno.</li>
+      <li><b>YubiKey 5 NFC / 5C NFC</b> - oko 8.350 dinara kod nas, 58 dolara u svetu. Dodaje jednokratne kodove, PIV (za prijavu na računar i potpisivanje), OpenPGP i TOTP slotove - dakle menja i Google Authenticator. Drži do 100 passkey-a na firmveru 5.7 i novijem (stariji modeli 25).</li>
+      <li><b>YubiKey 5C</b> (9.360) i <b>5C Nano</b> (9.792) - ista elektronika, drugi oblik. 5C nema NFC, pa nema ni prislanjanja na telefon. Nano je napravljen da ostane u USB portu i ne smeta.</li>
+      <li><b>YubiKey 5Ci</b> (12.240) - USB-C i Lightning, za starije iPhone modele; NFC mu nedostaje.</li>
+      <li><b>YubiKey Bio</b> - dodatak otiska prsta umesto dodira; skuplji i bez NFC-a, nema ga u redovnoj srpskoj ponudi.</li>
+      <li><b>Alternative</b> - Google Titan (od 30 dolara, do 250 passkey slotova) i Token2 rade isti FIDO2 posao za manje novca, ali ih je u Srbiji teže naći u radnji.</li>
+    </ul>
+    <p>Praktična preporuka: USB-C ako je računar noviji i telefon ima NFC, USB-A ako je stariji desktop. Ako se dvoumiš, 5C NFC pokriva oba sveta jer radi i preko kabla i preko prislanjanja.</p>
+
+    <h2>Dva ključa, ne jedan</h2>
+    <p>Ovo je deo koji ljudi preskoče i posle zažale. Ključ je jedini predmet u tvojoj digitalnoj bezbednosti koji može da se izgubi u autobusu. Zato se kupuju dva: jedan koji nosiš i jedan koji stoji kod kuće. Oba se registruju na isti nalog, jedan za drugim, u istoj sesiji.</p>
+    <p>Bez rezervnog ključa, gubitak znači prolazak kroz proceduru oporavka kod svakog servisa pojedinačno - a upravo te procedure su najslabija tačka cele priče. Ako servis dopušta oporavak preko SMS-a, napadač će pre izabrati taj put nego da razbija ključ.</p>
+
+    <h2>Gde kupiti u Srbiji</h2>
+    <ul class="pravila">
+      <li>Domaće prodavnice (yubico.rs, smartkey.rs i slične) - cena je viša nego u svetu, ali nema carine, dostava je brza i garancija se ostvaruje ovde</li>
+      <li>Amazon.de - oko 58 dolara za 5C NFC, ali na to idu dostava i uvozne dažbine; isplati se samo za više komada odjednom</li>
+      <li>Kod nas se u redovnoj ponudi najčešće nalaze 5 NFC, 5C NFC, Sigurnosni ključ C NFC i 5Ci; ostale modele treba tražiti</li>
+    </ul>
+
+    <h2>Postavljanje, u pet koraka</h2>
+    <ul class="pravila">
+      <li>Prvo i najvažnije: prijavi se na mejl, pa na njega veži ključ. Mejl je glavni ključ za sve ostalo, jer preko njega ide oporavak svih drugih naloga</li>
+      <li>Zatim nalog za koji ti je najviše stalo - Google, Apple ili Microsoft, pa društvene mreže, pa poslovni alati</li>
+      <li>Odmah dodaj i drugi ključ, dok si još u podešavanjima; ako servis traži da imenuješ ključeve, imenuj ih „glavni" i „rezervni"</li>
+      <li>Zapiši gde ti je rezervni ključ - bukvalno, na papir ili u menadžer lozinki, jer to je jedina stvar koju ćeš zaboraviti</li>
+      <li>Ukloni slabije metode gde servis to dopušta: SMS i kod iz aplikacije. Dok god postoje kao opcija, postoje i kao rupa</li>
+    </ul>
+
+    <h2>Da li VAM treba?</h2>
+    <ul class="pravila">
+      <li>Verovatno ne, ako: nemaš menadžer lozinki, koristiš istu lozinku svuda i ne znaš gde ti je mejl vezan - prvo to reši, jer ključ na loše postavljenim temeljima ne vredi</li>
+      <li>Vredi, ako: ti je mejl centar svega (banke, država, posao, društvene mreže), ako se baviš nečim što ne bi smelo da procuri, ili ako si jednostavno meta jer ti je ime javno</li>
+      <li>Obavezno, ako: si vlasnik domena, administrator naloga ili firme - tu jedan ukraden nalog znači sve ostale</li>
+    </ul>
+
+    <div class="verdikt"><b>Naš verdikt:</b> bezbednosni ključ nije za svakoga, ali za svakoga ko ima šta da izgubi jeste najisplativija bezbednosna kupovina koju može da napravi - jedanput, bez pretplate. Za 4.500 dinara dobija se zaštita koju nijedan SMS kod ne može da pruži. Uslov je da se kupe dva i da se oba registruju istog dana, jer ključ bez rezerve nije bezbednost nego nova briga.</div>
+
+    <div class="cta">
+      <div class="e">🔐</div>
+      <h3>Hoćeš i menadžer lozinki?</h3>
+      <p>Ključ čuva prijavu, menadžer čuva lozinke - zajedno pokrivaju obe strane. U katalogu su oba, sa manama napisanim do kraja.</p>
+      <a class="btn pri" href="/#katalog">Pogledaj katalog →</a>
+    </div>
+
+    <p class="disc"><b>Transparencija:</b> u našem katalogu deo linkova ka prodavnicama jesu partner linkovi i jasno su označeni - ako kupiš preko njih, zaradimo malu proviziju, a tebi ne košta ni dinar više. Mišljenja su naša, a mane uvek napisane. Cene su orijentacione, proverene u oktobru 2026.</p>
+  </div>
+</main>
+<footer>
+  <div class="wrap fbot">
+    <span>© 2026 <a href="/">Kupi Pametno</a> - nezavisni vodič za gadgete u Srbiji.</span>
+    <span>Napravljeno bez kolačića i prijava. 🌱</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById("themeBtn");
+  function apply(t){document.documentElement.dataset.theme=t;b.textContent=t==="dark"?"☀️":"🌓";}
+  var t=localStorage.getItem("kp-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  apply(t);
+  b.addEventListener("click",function(){t=t==="dark"?"light":"dark";localStorage.setItem("kp-theme",t);apply(t);});
+})();
+</script>
+</body>
+</html>
