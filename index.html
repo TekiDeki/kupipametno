@@ -298,7 +298,7 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
       <div class="gcard">
         <div class="ge">🛡️</div>
         <div class="gt">
-          <span class="tag">Vodič · novo</span>
+          <span class="tag">Vodič</span>
           <h3>Da li vam treba VPN u Srbiji?</h3>
           <p>Šta VPN stvarno štiti, a šta ne, zašto su besplatni VPN rizični i da li ga tvoje navike uopšte trebaju.</p>
         </div>
@@ -312,6 +312,15 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
           <p>LiDAR, snaga usisavanja, mop i baterija - šta stvarno menja iskustvo, a šta je marketing.</p>
         </div>
         <a class="btn pri" href="/robotski-usisivac-vodic">Pročitaj vodič →</a>
+      </div>
+      <div class="gcard">
+        <div class="ge">🔑</div>
+        <div class="gt">
+          <span class="tag">Vodič · novo</span>
+          <h3>Bezbednosni ključ: kad ti ukradu sesiju</h3>
+          <p>Zašto SMS kod više ne pomaže, šta fizički ključ stvarno rešava i koliko košta u Srbiji.</p>
+        </div>
+        <a class="btn pri" href="/yubikey-vodic">Pročitaj vodič →</a>
       </div>
       <div class="gcard">
         <div class="ge">📖</div>
@@ -493,12 +502,12 @@ const P = [
   cons:["Za svaki pogled traži aplikaciju","Ne diraj je u kupatilu - privatnost"],
   u:["kuca"], p:["bezbednost"], t:2, b:2, f:1,
   url:"https://gigatron.rs/pretraga?q=xiaomi+kamera+360"},
- {id:"yubi", e:"🔑", n:"YubiKey 5 NFC", c:"bezb", src:"amazon", pr:9000,
-  why:"Fizički ključ za dvofaktornu prijavu - nema koda koje se kradu, ima ključa koji je u džepu.",
-  pros:["Ne može se phishingovati","Radi sa Google, Microsoft, GitHub...","Vodootporan bez baterije"],
-  cons:["Vredi izgubiti ga ako nemaš rezervni","Nije svaki sajt podržava"],
+ {id:"yubi", e:"🔑", n:"YubiKey 5 NFC", c:"bezb", src:"web", pr:8350,
+  why:"Fizički ključ za dvofaktornu prijavu - nema koda koji se krade, ima ključ koji je u džepu.",
+  pros:["Ne može se phishingovati","Radi sa Google, Microsoft, GitHub...","Bez baterije, vodootporan"],
+  cons:["Gubi se - obavezno uzmi i rezervni","Nije svaki sajt podržava"],
   u:["svuda","kanc"], p:["bezbednost"], t:3, b:3, f:1,
-  url:"https://www.amazon.de/s?k=yubikey+5+nfc"},
+  url:"https://yubico.rs/"},
  {id:"aqara", e:"🚪", n:"Aqara senzor vrata i prozora", c:"bezb", src:"aliexpress", pr:2200,
   why:"Obaveštenje na telefon kad se vrata otvore - jeftin atom sigurnosnog sistema.",
   pros:["Trajna baterija do 2 godine","Trenutna obaveštenja","Mali, neprimetan"],
