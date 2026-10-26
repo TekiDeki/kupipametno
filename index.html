@@ -371,7 +371,7 @@ const AFF = {
   aliexpress: "",   // AliExpress: linkuri s.click per produs (campul a), generate in Portals
   gigatron: "",
   amazon: "",
-  web: ""
+  web: ""           // NordVPN/NordPass: link de tracking COMPLET, pus per produs in campul a
 };
 const SRC = { aliexpress:"AliExpress", gigatron:"Gigatron", amazon:"Amazon", web:"Veb sajt" };
 const CATS = { kuca:"Kuća", kanc:"Kancelarija", put:"Putovanja", bezb:"Bezbednost" };
@@ -510,7 +510,8 @@ const P = [
   pros:["Šifriranje na javnim mrežama","Preko 6.000 servera","Radi na 10 uređaja odjednom"],
   cons:["Mesečna pretplata, ne jednokratno","Smanjuje brzinu za 10-20%"],
   u:["svuda","put"], p:["bezbednost"], t:2, b:2, f:1, soft:true,
-  url:"https://nordvpn.com/"},
+  url:"https://nordvpn.com/",
+  a:"https://go.nordvpn.net/aff_c?offer_id=15&aff_id=159379&url_id=902"},
  {id:"bitwarden", e:"🔐", n:"Bitwarden Premium (menadžer lozinki)", c:"bezb", src:"web", pr:"10 $/god.",
   why:"Jedna glavna lozinka za sve - i generator jakih lozinki umesto tri varijante iste.",
   pros:["Rad na svim pregledačima i telefonima","Otvoren kod - proverljivo","Sinhronizacija kroz šifrirani trezor"],
@@ -580,7 +581,7 @@ function card(p){
       ${p.soft ? `<span class="pnote">Digitalna pretplata - provizija nam je delimično ponavljajuća.</span>` : ""}
       <div class="prow">
         <div class="price">${price}<small>${p.soft ? "pretplata" : "orijentaciono"}</small></div>
-        <a class="buy" href="${buyUrl(p)}" target="_blank" rel="nofollow noopener">Pogledaj ↗</a>
+        <a class="buy" href="${buyUrl(p)}" target="_blank" rel="${isAff(p) ? "sponsored nofollow noopener" : "nofollow noopener"}">Pogledaj ↗</a>
       </div>
       <span class="psrc">${SRC[p.src]}${isAff(p) ? " · partner link" : ""}</span>
     </div>
