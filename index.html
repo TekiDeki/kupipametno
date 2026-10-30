@@ -191,6 +191,8 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
 .totop.on{opacity:1;pointer-events:auto}
 </style>
 <script>try{var _t=localStorage.getItem("kp-theme");if(_t==="dark"||(!_t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 <header>
@@ -716,6 +718,14 @@ $("#themeBtn").addEventListener("click", ()=>{
 });
 addEventListener("scroll", ()=>{ $("#totop").classList.toggle("on", scrollY > 600); }, {passive:true});
 $("#totop").addEventListener("click", ()=>scrollTo({top:0, behavior:"smooth"}));
+</script>
+<script>
+/* Regula casei: PWA pe mobil. Codul service workerului sta in sw.js, nu aici. */
+if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  });
+}
 </script>
 </body>
 </html>
