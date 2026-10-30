@@ -5,12 +5,23 @@
  * Regula casei: fiecare aplicatie se instaleaza pe telefon si se deschide si fara retea.
  * Toata logica sta aici, in fisierul asta - in pagina raman doar cateva linii de inregistrare.
  * Se creste VERSION cand se schimba vreun fisier din SHELL.
+ *
+ * Doua griji pe care le rezolva fisierul asta, invatate pe pielea lui:
+ *  - gazda poate raspunde cu redirect (de ex. /vpn-vodic.html -> /vpn-vodic). Un raspuns venit
+ *    prin redirect nu poate fi folosit de browser pentru o NAVIGARE, asa ca il rescriem curat
+ *    inainte sa-l punem in cache;
+ *  - o singura adresa lipsa nu are voie sa strice instalarea: fiecare intrare se descarca separat.
  */
-var VERSION = 'kupipametno-v2';
+var VERSION = 'kupipametno-v3';
 var CACHE = VERSION;
 var SHELL = [
   './',
   './index.html',
+  './1111-aliexpress-vodic',
+  './robotski-usisivac-vodic',
+  './temu-vredi-u-srbiji',
+  './vpn-vodic',
+  './yubikey-vodic',
   './1111-aliexpress-vodic.html',
   './robotski-usisivac-vodic.html',
   './temu-vredi-u-srbiji.html',
@@ -23,9 +34,36 @@ var SHELL = [
   './apple-touch-icon.png'
 ];
 
+/* descarca o adresa si intoarce un raspuns curat (200, fara urma de redirect) */
+function curat(url) {
+  return fetch(new Request(url, { credentials: 'same-origin', redirect: 'follow' }))
+    .then(function (response) {
+      if (!response || !response.ok) return null;
+      return response.blob().then(function (body) {
+        return new Response(body, {
+          status: 200,
+          statusText: 'OK',
+          headers: { 'Content-Type': response.headers.get('Content-Type') || 'text/html; charset=utf-8' }
+        });
+      }).then(function (raspuns) {
+        return { raspuns: raspuns, final: response.url || url };
+      });
+    })
+    .catch(function () { return null; });
+}
+
 self.addEventListener('install', function (event) {
   event.waitUntil(caches.open(CACHE).then(function (cache) {
-    return cache.addAll(SHELL);
+    return Promise.all(SHELL.map(function (url) {
+      var absolut = new URL(url, self.registration.scope).href;
+      return curat(absolut).then(function (rezultat) {
+        if (!rezultat) return;                      /* lipseste: instalarea merge inainte */
+        return Promise.all([
+          cache.put(absolut, rezultat.raspuns.clone()),
+          cache.put(rezultat.final, rezultat.raspuns.clone())
+        ]);
+      });
+    }));
   }).then(function () { return self.skipWaiting(); }));
 });
 
@@ -37,6 +75,18 @@ self.addEventListener('activate', function (event) {
   }).then(function () { return self.clients.claim(); }));
 });
 
+/* un raspuns venit prin redirect nu poate satisface o navigare: il rescriem */
+function pentruNavigare(raspuns) {
+  if (!raspuns || !raspuns.redirected) return Promise.resolve(raspuns);
+  return raspuns.blob().then(function (body) {
+    return new Response(body, {
+      status: 200,
+      statusText: 'OK',
+      headers: { 'Content-Type': raspuns.headers.get('Content-Type') || 'text/html; charset=utf-8' }
+    });
+  });
+}
+
 self.addEventListener('fetch', function (event) {
   var request = event.request;
   if (request.method !== 'GET') return;
@@ -46,17 +96,19 @@ self.addEventListener('fetch', function (event) {
   event.respondWith(caches.open(CACHE).then(function (cache) {
     return cache.match(request, { ignoreSearch: true }).then(function (cached) {
       var network = fetch(request).then(function (response) {
-        if (response && response.ok && response.type === 'basic') {
+        if (response && response.ok && response.type === 'basic' && !response.redirected) {
           cache.put(request, response.clone()).catch(function () {});
         }
         return response;
       });
-      if (cached) { event.waitUntil(network.catch(function () {})); return cached; }
+      if (cached) {
+        event.waitUntil(network.catch(function () {}));
+        return pentruNavigare(cached);
+      }
       return network.catch(function () {
         /* fara retea si fara copie: intoarce pagina principala, ca aplicatia sa porneasca totusi */
-        return cache.match('./index.html', { ignoreSearch: true }).then(function (fallback) {
-          return fallback || Response.error();
-        });
+        return cache.match(new URL('./index.html', self.registration.scope).href, { ignoreSearch: true })
+          .then(function (fallback) { return fallback || Response.error(); });
       });
     });
   }));
