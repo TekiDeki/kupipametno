@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0b8457">
 <link rel="canonical" href="https://kupipametno.freehtml.dev/">
 <meta property="og:title" content="Kupi Pametno - Koji gadget ti treba?">
-<meta property="og:description" content="Nađi pravi gadget za 60 sekundi. Iskrene preporuke, orijentacione cene, linkovi do proverenih prodavnica.">
+<meta property="og:description" content="Nađi pravi gadget u šest pitanja. Iskrene preporuke, orijentacione cene, linkovi do prodavnica.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b8457'/%3E%3Cpath d='M18 24h28l-3 24a4 4 0 0 1-4 3H25a4 4 0 0 1-4-3zm8 0v-2a6 6 0 0 1 12 0v2' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27' cy='33' r='2.5' fill='%23fff'/%3E%3Ccircle cx='37' cy='33' r='2.5' fill='%23fff'/%3E%3C/svg%3E">
 <style>
@@ -212,7 +212,7 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
     <div>
       <span class="kicker"><span class="dot"></span>Vodič za pametnu kupovinu</span>
       <h1>Koji gadget <em>ti</em> treba?</h1>
-      <p class="lead">Šest pitanja, šezdeset sekundi - i dobijaš tri preporuke sa poštenim razlozima, orijentacionim cenama i linkom do proverene prodavnice. Mi ne prodajemo ništa: vodimo te do prave kupovine.</p>
+      <p class="lead">Šest pitanja - i dobijaš tri preporuke sa poštenim razlozima, orijentacionim cenama i linkom do prodavnice. Mi ne prodajemo ništa: vodimo te do prave kupovine.</p>
       <div class="cta">
         <a class="btn pri" href="#finder">✨ Pronađi svoj gadget</a>
         <a class="btn gho" href="#katalog">Preskoči na katalog</a>
@@ -226,7 +226,7 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
         <div class="st"><span class="n">2</span>Koliko izdvajaš, šta ti je važno?</div>
         <div class="st"><span class="n">3</span>Tri preporuke sa razlozima</div>
       </div>
-      <div class="res">🎯 Tvoj najbolji poklonac <span class="pct">96%</span></div>
+      <div class="res">🎯 Tri preporuke sa razlogom</div>
     </div>
   </div>
 </div>
@@ -284,7 +284,7 @@ footer .fdesc{color:var(--mut);font-size:14.5px;max-width:360px;margin-top:10px}
     <div class="shead"><h2>Kako biramo</h2><p>Četiri pravila po kojima radi svaka preporuka na ovom sajtu.</p></div>
     <div class="hgrid">
       <div class="hcard2"><div class="he">🎯</div><h3>Praktična vrednost</h3><p>Ne listamo šta je popularno. Gledamo šta problema rešava u svakodnevici - i opisujemo iskreno, sa manama uključeno.</p></div>
-      <div class="hcard2"><div class="he">🏪</div><h3>Provereni prodavci</h3><p>Linkujemo samo velike prodavnice sa garancijom, povraćajem i podrškom na srpskom ili engleskom: AliExpress, Gigatron, Amazon.</p></div>
+      <div class="hcard2"><div class="he">🏪</div><h3>Provereni prodavci</h3><p>Linkujemo prodavnice kod kojih se zna ko odgovara za garanciju i povraćaj: AliExpress i Gigatron za gadgete, a za pretplate i ključeve direktno proizvođače (NordVPN, Bitwarden, Yubico).</p></div>
       <div class="hcard2"><div class="he">💰</div><h3>Cene bez trikova</h3><p>Bez lažnih popusta i odbrojavanih sati. Naša cena je orijentaciona, a prava uvek stoji u prodavnici - gde je i akcija ako je ima.</p></div>
       <div class="hcard2"><div class="he">🤝</div><h3>Otvoreni partneri</h3><p>Zaradimo malu proviziju kad kupiš preko partner linka. Tvoja cena ostaje ista - proviziju plaća prodavnica, ne ti. A kad je prava kupovina u prodavnici bez partner programa, linkujemo je isto - bez provizije.</p></div>
     </div>
@@ -527,7 +527,7 @@ const P = [
  {id:"vpn", e:"🛡️", n:"VPN (NordVPN, 2-godišnji plan)", c:"bezb", src:"web", pr:"od 3,49 €/mes.",
   why:"Saobraćaj ti je šifriran i na javnom WiFi - tunel do kuće, i iz kafića i sa aerodroma.",
   pros:["Šifriranje na javnim mrežama","Preko 6.000 servera","Radi na 10 uređaja odjednom"],
-  cons:["Mesečna pretplata, ne jednokratno","Smanjuje brzinu za 10-20%"],
+  cons:["Mesečna pretplata, ne jednokratno","Brzina ume da padne, najviše na udaljenim serverima"],
   u:["svuda","put"], p:["bezbednost"], t:2, b:2, f:1, soft:true,
   url:"https://nordvpn.com/",
   a:"https://go.nordvpn.net/aff_c?offer_id=15&aff_id=159379&url_id=902"},
@@ -597,7 +597,7 @@ function card(p){
       <h3>${p.n}</h3>
       <p class="pwhy">${p.why}</p>
       <ul class="plist">${p.pros.slice(0,2).map(x=>`<li>${x}</li>`).join("")}${p.cons[0]?`<li>${p.cons[0]}</li>`.replace("<li>","<li data-c>"): ""}</ul>
-      ${p.soft ? `<span class="pnote">Digitalna pretplata - provizija nam je delimično ponavljajuća.</span>` : ""}
+      ${p.soft ? `<span class="pnote">Digitalna pretplata - ${isAff(p) ? "provizija nam je delimično ponavljajuća" : "bez partner linka, pa bez provizije"}.</span>` : ""}
       <div class="prow">
         <div class="price">${price}<small>${p.soft ? "pretplata" : "orijentaciono"}</small></div>
         <a class="buy" href="${buyUrl(p)}" target="_blank" rel="${isAff(p) ? "sponsored nofollow noopener" : "nofollow noopener"}">Pogledaj ↗</a>
