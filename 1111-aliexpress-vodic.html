@@ -80,7 +80,9 @@ main{padding:52px 0 30px}
 .banner span{font-size:13.5px;color:var(--mut);display:block}
 .banner a{margin-left:auto}
 .verdikt{background:var(--surf2);border-left:4px solid var(--ac);border-radius:0 14px 14px 0;padding:18px 22px;font-size:16.5px;line-height:1.7;margin:26px 0}
-.art table{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:15px;background:var(--surf);border-radius:14px;overflow:hidden;box-shadow:var(--sh)}
+.art .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 22px}
+.table-wrap table{min-width:520px;margin:0}
+table{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:15px;background:var(--surf);border-radius:14px;overflow:hidden;box-shadow:var(--sh)}
 .art th,.art td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--bd)}
 .art th{background:var(--surf2);font-weight:800;font-size:14px}
 .art tr:last-child td{border-bottom:none}
@@ -94,6 +96,12 @@ footer{border-top:1px solid var(--bd);margin-top:48px;padding:26px 0}
 .fbot a{color:var(--mut);font-weight:600}
 .fbot a:hover{color:var(--ink)}
 @media(max-width:680px){.fbot{flex-direction:column;text-align:center}}
+
+  /* regula casei: tinte de atingere pe mobil */
+  @media (pointer: coarse), (max-width: 700px) {
+    a { min-height: 34px; display: inline-flex; align-items: center; }
+    a { padding-block: 7px; }
+  }
 </style>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -127,13 +135,13 @@ footer{border-top:1px solid var(--bd);margin-top:48px;padding:26px 0}
     </ul>
     <p>Zato paket od 4 evra na kraju košta skoro duplo: 4 evra robe, oko 1 evra PDV-a i 260 dinara taksi. Fiksni trošak ne zavisi od cene - što je predmet jeftiniji, to ga više pojede.</p>
 
-    <table>
+    <div class="table-wrap"><table>
       <tr><th>Vrednost robe</th><th>Šta se plaća</th><th>Ukupno otprilike</th></tr>
       <tr><td class="num">4 €</td><td class="num">20% PDV + 260 din</td><td class="num">oko 7,2 €</td></tr>
       <tr><td class="num">20 €</td><td class="num">20% PDV + 260 din</td><td class="num">oko 26,2 €</td></tr>
       <tr><td class="num">45 €</td><td class="num">20% PDV + 260 din</td><td class="num">oko 56,2 €</td></tr>
       <tr><td class="num">60 €</td><td class="num">10% carina + 20% PDV na zbir + 260 din</td><td class="num">oko 81,5 €</td></tr>
-    </table>
+    </table></div>
     <p>Računato na 1 evro = 117 dinara. Iznosi su približni, jer Pošta i carina mogu da dodaju svoju obradu - ali odnos je tačan i on je suština.</p>
 
     <div class="banner">

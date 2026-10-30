@@ -80,6 +80,13 @@ nav a:hover{color:var(--ink);background:var(--surf2);text-decoration:none}
 .hcard .res{margin-top:14px;background:linear-gradient(135deg,var(--ac),var(--ac2));border-radius:14px;padding:13px 16px;color:#fff;display:flex;align-items:center;gap:12px;font-weight:700;font-size:14.5px}
 .hcard .res .pct{background:rgba(255,255,255,.22);padding:3px 10px;border-radius:var(--rad);font-size:12.5px}
 @media(max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:34px}.hero{padding:52px 0 44px}}
+
+  /* regula casei: tinte de atingere pe mobil */
+  @media (pointer: coarse), (max-width: 700px) {
+    .chip.on { min-height: 34px; display: inline-flex; align-items: center; }
+    .chip { min-height: 34px; display: inline-flex; align-items: center; }
+    a { padding-block: 9px; }
+  }
 </style>
 <style>
 /* ---------- sections ---------- */

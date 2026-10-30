@@ -89,6 +89,11 @@ footer{border-top:1px solid var(--bd);margin-top:48px;padding:26px 0}
 .fbot a{color:var(--mut);font-weight:600}
 .fbot a:hover{color:var(--ink)}
 @media(max-width:680px){.fbot{flex-direction:column;text-align:center}}
+
+  /* regula casei: tinte de atingere pe mobil */
+  @media (pointer: coarse), (max-width: 700px) {
+    a { min-height: 34px; display: inline-flex; align-items: center; }
+  }
 </style>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
