@@ -37,4 +37,8 @@ Surse linkuri (verificate 23.10.2026):
 
 ## Licență
 
-Proprietate privată. Repo privat - nu se face public fără decizia proprietarului.
+Proprietate privată, toate drepturile rezervate. Vezi `LICENSE`.
+
+Repo-ul e public din 31.10.2026, la decizia proprietarului, pentru transparență - nu ca
+open source. Vizualizarea și fork-ul pe GitHub sînt permise doar cît cere Termenii GitHub;
+nu dau dreptul de a folosi, publica sau implementa conținutul.
