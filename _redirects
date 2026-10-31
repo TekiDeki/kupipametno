@@ -1,0 +1,5 @@
+# Fisierele de lucru nu se servesc public. Sînt în depozit, dar un vizitator care le cere
+# e trimis la prima pagina. Adaugat 31.10.2026: /README.md si /tests/test_pwa.py raspundeau 200.
+/README.md  /  302
+/tests      /  302
+/tests/*    /  302
